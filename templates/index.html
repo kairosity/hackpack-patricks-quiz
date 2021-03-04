@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +19,8 @@
     <link rel="shortcut icon" type="image/jpg" href="assets/images/logo/favicon.ico" />
     <title>Patrick's Quiz</title>
     <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <!-- Logo/Title -->
         <nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
             <div class="logo-container">
-                <a href="index.html" class="logo navbar-brand">
+                <a href="templates/index.html" class="logo navbar-brand">
                     <img src="assets/images/logo/logo.png" alt="Patrick's Quiz logo" height="90" width="90">
                 </a>
                 <span class="title">Patrick's Quiz</span>
@@ -41,7 +42,7 @@
             <div id="navbarToggle" class="collapse navbar-collapse justify-content-end">
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link active-page" href="index.html">Home</a>
+                        <a class="nav-link active-page" href="templates/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Get to Know Paddy</a>
@@ -52,12 +53,11 @@
                 </ul>
             </div>
         </nav>
-
-
     </header>
 
     <section>
-
+        <a href="{{url_for('login')}}">Login</a>
+        <a href="{{url_for('register')}}">Register</a>
     </section>
 
     <footer>

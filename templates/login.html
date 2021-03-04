@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
+    <title>Login</title>
+</head>
+ 
+ <div class="row">
+        
+    <div class="col s12 m8 offset-m2 l6 offset-l3 xl4 offset-xl4">
+        
+        <form class="login-form card-panel " method="POST" action="{{ url_for('login') }}">
+            <h1 class="center-align page-heading">Login</h1>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" name="email" type="text" class="validate" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+                    <label for="email">email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="password" name="password" type="password" class="validate" minlength="6" maxlength="25" required>
+                    <label for="password">password</label>
+                </div>
+                <button class="login-btn btn-large btn waves-effect waves-light center-align" type="submit" name="action">LOGIN
+                </button>
+            </div>
+        </form>
+    </div>
+  </div>

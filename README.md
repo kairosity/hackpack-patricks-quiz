@@ -312,3 +312,36 @@ For general database on software development.
 Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
 
 Huge thank you to the [Slack](code-institute-room.slack.com) community, its all the members and all the leads and tutors for their help and support.
+# Hack Pack Team Project Workflow
+
+### 1. Open project repo via GitPod
+
+### 2. Create a branch with the feature you are working on using: 
+        git branch feature_name
+
+### 3. Checkout the branch so that you are actually working on that branch:
+        git checkout feature_name
+
+### 4. Write your code and commit as you normally would. 
+
+### 5. If you see that the origin/master branch has been updated with code that you think you should be incorporating into your 
+feature branch, then first make sure you are on your feature branch and then type:
+        git fetch
+
+This will pull all the new info down from the remote master to the local master, but will not merge it yet. 
+
+### 6. To merge the new code first switch to the remote master:
+
+    git checkout master 
+
+### 7. 
+This *should* take all the master branch changes and apply them to your branch so you can work with the most updated code. 
+
+### 6. When you are ready to merge your changes with the master branch: first switch to the master branch using:
+        git checkout master 
+
+### 7. Then merge your changes into the master. 
+        git merge feature_name 
+
+### 8. Delete your branch
+        git branch -d feature_name
