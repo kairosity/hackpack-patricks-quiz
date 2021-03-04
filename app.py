@@ -49,11 +49,8 @@ def register():
             return redirect(url_for('register'))
 
         register_user = {
-        "first_name": request.form.get("first_name"),
-        "last_name": request.form.get("last_name"),
         "username": request.form.get("username").lower(),
         "email": request.form.get("email").lower(),
-        "county_team": request.form.get("county_team"),
         "password": generate_password_hash(request.form.get("password")),
         "points": None
         }
@@ -67,14 +64,14 @@ def register():
     return render_template("registration.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
 
     if request.method == "POST":
         email = request.form.get("email").lower()
         password = request.form.get("password")
 
-        existing_user = database_var.db.users.find_one(
+        existing_user = mongo.db.users.find_one(
         {"email": email})
 
         if existing_user:
@@ -83,7 +80,7 @@ def login():
                 username = existing_user["username"]
                 session["user"] = username
                 flash(f"Welcome, {username}!")
-                return redirect(url_for("index"))
+                return redirect(url_for("home"))
             else:
                 flash("Incorrect username and/or password!")
                 return redirect(url_for("login"))
