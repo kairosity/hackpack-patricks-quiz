@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+from random import randint
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -89,6 +90,56 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+def rand_num():
+    return randint(00000, 99999)
+
+
+@app.route("/create_battle", methods=["GET", "POST"])
+def create_battle():
+
+    if request.method == "POST":
+        if session:
+            if "user" in session:
+                username = session["user"]
+                user = mongo.db.users.find_one({"username": username})
+                user_id = user["_id"]
+
+                #need a way to make sure that the battle pin has not been generated already.
+                # While existing battle pin run the function?  
+
+
+                existing_battle = mongo.db.battles.find_one(
+                            {"battle_name": request.form.get("battle_name").lower()})
+
+                if existing_battle:
+                    flash("That Battle Name is Taken, please choose a different one.")
+                    return redirect(url_for('create_battle'))
+
+                battle_pin = rand_num()
+                existing_battle_pin = mongo.db.battles.find_one({"battle_pin": battle_pin})
+
+                # this is not right yet.
+                while existing_battle_pin != None:
+                    battle_pin = rand_num()
+                    existing_battle_pin = mongo.db.battles.find_one({"battle_pin": battle_pin})
+
+                print(battle_pin)
+
+                register_battle = {
+                "battle_name": request.form.get("battle_name").lower(),
+                "players": [user_id],
+                "battle_pin": battle_pin
+                }
+
+                mongo.db.battles.insert_one(register_battle)
+
+                flash("Your battle has been created! Welcome to the quiz!")
+                username = session["user"]
+
+    return render_template("create_battle.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
