@@ -324,15 +324,17 @@ Huge thank you to the [Slack](code-institute-room.slack.com) community, its all 
 
 ### 4. Write your code and commit as you normally would. 
 
-### 5. When you're ready to commit your changes back into master branch run git fetch 
-        git fetch
-    
-### 6. Squash your commits into 1 commit 
-        git rebase -i origin/master 
-    
-### 7. Switch to the master branch to merge your changes INTO that branch
+### 5. If you see that the master branch has been updated with code that you think you should be incorporating into your 
+feature branch, then first make sure you are on your feature branch and then type:
+        git merge master 
+
+This *should* take all the master branch changes and apply them to your branch so you can work with the most updated code. 
+
+### 6. When you are ready to merge your changes with the master branch: first switch to the master branch using:
         git checkout master 
 
-### 8. Merge your changes into the master. 
+### 7. Then merge your changes into the master. 
         git merge feature_name 
 
+### 8. Delete your branch
+        git branch -d feature_name
