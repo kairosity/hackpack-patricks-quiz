@@ -1,3 +1,44 @@
-h2{
-    color: red;
+/* Navigation bar */
+
+
+
+.logo {
+    margin: 10px 0 10px 10px;
+}
+
+.title {
+    color: #f2f2f2;
+    font-size: 24px;
+    text-align: left;
+}
+
+@media(max-width: 375px) {
+    .navbar {
+        padding: 8px;
+    }
+    .logo {
+        margin: 3px 0 3px 3px;
+    }
+
+    .logo img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+.nav-link {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f2ae2e;
+}
+
+.active-page {
+    color: #f2ae2e;
 }
