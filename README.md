@@ -312,3 +312,27 @@ For general database on software development.
 Special thanks to all Code Institute's team ("Teacher", Lecturers and Tutors) that are making me more knowledgeable and are making this happen.
 
 Huge thank you to the [Slack](code-institute-room.slack.com) community, its all the members and all the leads and tutors for their help and support.
+# Hack Pack Team Project Workflow
+
+### 1. Open project repo via GitPod
+
+### 2. Create a branch with the feature you are working on using: 
+        git branch feature_name
+
+### 3. Checkout the branch so that you are actually working on that branch:
+        git checkout feature_name
+
+### 4. Write your code and commit as you normally would. 
+
+### 5. When you're ready to commit your changes back into master branch run git fetch 
+        git fetch
+    
+### 6. Squash your commits into 1 commit 
+        git rebase -i origin/master 
+    
+### 7. Switch to the master branch to merge your changes INTO that branch
+        git checkout master 
+
+### 8. Merge your changes into the master. 
+        git merge feature_name 
+
