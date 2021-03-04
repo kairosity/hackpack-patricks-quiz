@@ -55,6 +55,7 @@ def register():
         "email": request.form.get("email").lower(),
         "county_team": request.form.get("county_team"),
         "password": generate_password_hash(request.form.get("password")),
+        "points": None
         }
 
         mongo.db.users.insert_one(register_user)
