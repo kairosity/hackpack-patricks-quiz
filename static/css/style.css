@@ -34,15 +34,15 @@ font-family: 'Playfair Display', serif; */
     }
 }
 
-.nav-link {
+.navbar-dark .navbar-nav .nav-link {
     color: #f2f2f2;
     text-decoration: none;
 }
 
-.nav-link:hover {
+.navbar-dark .navbar-nav .nav-link:hover {
     color: #f2ae2e;
 }
 
-.active-page {
+.navbar-dark .navbar-nav .nav-link .active-page {
     color: #f2ae2e;
 }
