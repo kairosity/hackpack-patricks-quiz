@@ -324,10 +324,17 @@ Huge thank you to the [Slack](code-institute-room.slack.com) community, its all 
 
 ### 4. Write your code and commit as you normally would. 
 
-### 5. If you see that the master branch has been updated with code that you think you should be incorporating into your 
+### 5. If you see that the origin/master branch has been updated with code that you think you should be incorporating into your 
 feature branch, then first make sure you are on your feature branch and then type:
-        git merge master 
+        git fetch
 
+This will pull all the new info down from the remote master to the local master, but will not merge it yet. 
+
+### 6. To merge the new code first switch to the remote master:
+
+    git checkout master 
+
+### 7. 
 This *should* take all the master branch changes and apply them to your branch so you can work with the most updated code. 
 
 ### 6. When you are ready to merge your changes with the master branch: first switch to the master branch using:
