@@ -26,10 +26,11 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <!-- Navigation bar -->
         <!-- Logo/Title -->
         <nav class="navbar navbar-dark bg-dark navbar-expand-sm  fixed-top">
+            <div class="container-fluid">
             <div class="logo-container">
                 <a href="templates/index.html" class="brand-logo logo navbar-brand">
                     <img src="{{url_for('static', filename='/assets/images/logo/logo.png')}}" height="90" width="90">
@@ -49,10 +50,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Get to Know Paddy</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pub Quiz</a>
-                    </li>
+                    
                     {% if session['user'] %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('create_battle')}}">Create a Quiz Battle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('join_battle')}}">Join a Quiz Battle</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                     </li>
@@ -66,11 +71,15 @@
                     {% endif %}
                 </ul>
             </div>
+            </div>
         </nav>
     </header>
 
 <section>
-    <!-- Flash Messages displayed here -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                 <!-- Flash Messages displayed here -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
@@ -80,6 +89,11 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
+            </div>
+        </div>
+    </div>
+
+   
 </section>
 {% block content %}
 {% endblock %}
