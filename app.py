@@ -151,16 +151,19 @@ def create_battle():
                     battle_pin = rand_num()
                     existing_battle_pin = mongo.db.battles.find_one({"battle_pin": battle_pin})
 
+                battle_name = request.form.get("battle_name").lower()
+
                 register_battle = {
-                "battle_name": request.form.get("battle_name").lower(),
+                "battle_name": battle_name,
                 "players": [user_id],
                 "battle_pin": battle_pin
                 }
 
                 mongo.db.battles.insert_one(register_battle)
 
-                flash("Your battle has been created! Welcome to the quiz!")
+                flash(f"Your {battle_name} battle has been created! Welcome to the quiz! Your battle pin is {battle_pin}, share this with your competitors to battle it out!")
                 username = session["user"]
+                return redirect(url_for('battleground', battle_pin=battle_pin))
 
     return render_template("create_battle.html")
 

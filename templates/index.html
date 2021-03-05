@@ -6,17 +6,31 @@
 
 {% block content %}
 
-<section class="container-fluid">
-    <div class="row col-12">
-        <div class=" mx-auto">
-            <div class="row">
-            <a href="{{url_for('login')}}" id="login-button" class="btn btn-success" type="button">Login</a>
-            </div>
-            <div class="row mt-2">
-            <a href="{{url_for('register')}}" id="register-button" class="btn btn-success" type="button">Register</a>
+{% if session["user"] %}
+
+    <h1>Welcome {{session["user"]}}</h1>
+    
+    <h2>This is where code goes for what a user sees on the homepage when they are logged in. </h2>
+    <h3>As it doesn't make sense for them to see login & register anymore. </h3>
+
+    <a href="{{url_for('create_battle')}}">Create a Battle!</a>
+    <a href="{{url_for('join_battle')}}">Join a Battle</a>
+
+{% else %}
+
+    <section class="container-fluid">
+        <div class="row col-12">
+            <div class=" mx-auto">
+                <div class="row">
+                <a href="{{url_for('login')}}" id="login-button" class="btn btn-success" type="button">Login</a>
+                </div>
+                <div class="row mt-2">
+                <a href="{{url_for('register')}}" id="register-button" class="btn btn-success" type="button">Register</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+{% endif %}
 
 {% endblock %}
