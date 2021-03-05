@@ -5,6 +5,7 @@
 body {
     position: relative;
     min-height: 100vh;
+    padding-top: 165px; 
 }
 
 /* font-family: 'Berkshire Swash', cursive; ===> Header and Footer
