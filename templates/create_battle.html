@@ -8,7 +8,18 @@
         type="text/css">
     <title>Create a Quiz Battle</title>
 </head>
-
+ <section>
+    <!-- Flash Messages displayed here -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h4 class="flashmsg center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
 <body>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('create_battle') }}">

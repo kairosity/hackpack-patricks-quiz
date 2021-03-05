@@ -55,8 +55,24 @@
             </div>
         </nav>
     </header>
+<<<<<<< HEAD
     <!-- Home page - Thus far this has the 2 links to register 
         & login and definitely needs a title, an introduction to the concept and some information about Paddy’s day.,, etc… -->
+=======
+<section>Testing</section>
+<section>
+    <!-- Flash Messages displayed here -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h4 class="flashmsg center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
+>>>>>>> 5b0fa9e59c93ee2f335b339ac9fbfcdd41a82385
 
     <section>
         <a href="{{url_for('login')}}" id="login-button">Login</a>
