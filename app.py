@@ -141,6 +141,30 @@ def create_battle():
     return render_template("create_battle.html")
 
 
+@app.route("/join-battle", methods=["GET", "POST"])
+def join_battle():
+
+    if request.method == "POST":
+        inserted_pin = int(request.form.get("pin"))
+        battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
+        battles = mongo.db.battles.find()
+
+        print(battles)
+
+        for instances in battles:
+            if instances['battle_pin'] == inserted_pin:
+                return render_template("battleground.html")
+            else:
+                return render_template("join-battle.html")
+
+    return render_template("join-battle.html")
+
+
+@app.route("/battleground")
+def battleground():
+    return render_template("battleground.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
