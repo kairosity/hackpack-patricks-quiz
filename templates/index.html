@@ -5,47 +5,9 @@
 {% endblock %}
 
 {% block content %}
+    
+{% if session["user"] %}
 
-    <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}" />
-    <title>Patrick's Quiz</title>
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css"> -->
-</head>
-
-<body>
-    <header>
-        <!-- Navigation bar -->
-        <!-- Logo/Title -->
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md  fixed-top">
-            <div class="logo-container">
-                <a href="templates/index.html" class="brand-logo logo navbar-brand">
-                    <img src="{{url_for('static', filename='/assets/images/logo/logo.png')}}" height="90" width="90">
-                </a>
-                <span class="title">Patrick's Quiz</span>
-            </div>
-            <!-- Navigation menu -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-                aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarToggle" class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active-page" href="templates/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Get to Know Paddy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pub Quiz</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Home page - Thus far this has the 2 links to register 
-        & login and definitely needs a title, an introduction to the concept and some information about Paddy’s day.,, etc… -->
 <section class="container-fluid home-section">
     <div class="row home-text">
         <div class="col">
@@ -62,17 +24,35 @@
     <div class="row home-button-section">
         <div class="col-12 col-md-6 d-flex justify-content-center">
             <div class="home-button">
-                <a href="{{url_for('login')}}">Login</a>
+                <a href="{{url_for('create_battle')}}">Create a Battle!</a>
             </div>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-center">
             <div class="home-button">
-                <a href="{{url_for('register')}}">Register</a>
+                <a href="{{url_for('join_battle')}}">Join a Battle</a>
             </div>
         </div>
     </div>
-    
 </section>
 
-{% endblock %}
+    
+    
 
+{% else %}
+
+    <section class="container-fluid">
+        <div class="row col-12">
+            <div class=" mx-auto">
+                <div class="row">
+                <a href="{{url_for('login')}}" id="login-button" class="btn btn-success" type="button">Login</a>
+                </div>
+                <div class="row mt-2">
+                <a href="{{url_for('register')}}" id="register-button" class="btn btn-success" type="button">Register</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif %}
+
+{% endblock %}
