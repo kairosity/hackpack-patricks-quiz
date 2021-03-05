@@ -9,6 +9,10 @@ font-family: 'Pacifico', cursive;     ===> Text         */
 
 /*---------------------------------------------------------------------- Header */
 
+/* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
+body { 
+    padding-top: 136px; 
+}
 /* Logo */
 
 .logo {
@@ -37,6 +41,22 @@ font-family: 'Pacifico', cursive;     ===> Text         */
 
 .navbar-dark .navbar-nav .nav-link .active-page {
     color: #f2ae2e;
+}
+
+/* Flash Messages */
+
+h4.flashmsg {
+    line-height: 3;
+    color:white;
+    margin: 0 auto;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.6rem;
+
+    
+}
+.flashes{
+    background-color: green;
+    justify-content: center;
 }
 
 /* Responsive header */
@@ -86,7 +106,7 @@ font-family: 'Pacifico', cursive;     ===> Text         */
 
 .home-text {
     text-align: center;
-    margin: 120px 20px 20px;
+    margin: 0 20px 20px;
 }
 
 .home-text h1 {
@@ -94,6 +114,7 @@ font-family: 'Pacifico', cursive;     ===> Text         */
     color: #f2f2f2;
     font-size: 60px;
     margin: 40px;
+    padding-top: 3rem;
 }
 
 .home-text p {
