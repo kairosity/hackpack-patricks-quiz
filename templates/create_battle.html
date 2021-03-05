@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
-    <title>Create a Quiz Battle</title>
-</head>
- <section>
-    <!-- Flash Messages displayed here -->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="row flashes">
-        <h4 class="flashmsg center-align">{{ message }}</h4>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-</section>
-<body>
+{% block title %}
+<title>Create a Quiz Battle</title>
+{% endblock %}
+    
+
+{% block content %}
+
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('create_battle') }}">
             <div class="row">
@@ -37,6 +23,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-</body>
-
-</html>
+{% endblock %}
