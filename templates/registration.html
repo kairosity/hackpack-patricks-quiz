@@ -6,77 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
-    <title>Document</title>
+    <title>Register New Player</title>
 </head>
 
 <body>
     <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="first_name" type="text" name="first_name" class="validate">
-                    <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" name="last_name" class="validate">
-                    <label for="last_name">Last Name</label>
-                </div>
-            </div>
+        <form class="col s12" method="POST" action="{{ url_for('register') }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="username" type="text" name="username" class="validate">
+                    <input id="username" type="text" name="username" class="validate" required> 
                     <label for="username">Username</label>
                 </div>
             </div>
+            <div class="input-field col s12">
+                    <input id="email" name="email" type="text" class="validate" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+                    <label for="email">email</label>
+                </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password" type="password" name="password" class="validate">
+                    <input id="password" type="password" name="password" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="password-confirmation" type="password" name="password-confirmation" class="validate">
+                    <input id="password-confirmation" type="password" name="password-confirmation" class="validate" required>
                     <label for="password">Password Confirmation</label>
                 </div>
             </div>
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Antrim</option>
-                    <option value="2">Armagh</option>
-                    <option value="3">Carlow</option>
-                    <option value="3">Cavan</option>
-                    <option value="3">Clare</option>
-                    <option value="3">Derry (Londonderry)</option>
-                    <option value="3">Donegal</option>
-                    <option value="3">Down</option>
-                    <option value="3">Dublin</option>
-                    <option value="3">Fermanagh</option>
-                    <option value="3">Galway</option>
-                    <option value="3">Kerry</option>
-                    <option value="3">Kildare</option>
-                    <option value="3">Kilkenny</option>
-                    <option value="3">Laois (Queens)</option>
-                    <option value="3">Leitrim</option>
-                    <option value="3">Limerick</option>
-                    <option value="3">Longford</option>
-                    <option value="3">Louth</option>
-                    <option value="3">Mayo</option>
-                    <option value="3">Meath</option>
-                    <option value="3">Monaghan</option>
-                    <option value="3">Offaly (Kings)</option>
-                    <option value="3">Roscommon</option>
-                    <option value="3">Sligo</option>
-                    <option value="3">Tipperary</option>
-                    <option value="3">Tyrone</option>
-                    <option value="3">Waterford</option>
-                    <option value="3">Westmeath</option>
-                    <option value="3">Wexford</option>
-                    <option value="3">Wicklow</option>
-                </select>
-                <label>Materialize Select</label>
-            </div>
+            <button type="submit">Register</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
