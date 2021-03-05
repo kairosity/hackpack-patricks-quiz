@@ -7,11 +7,14 @@ body {
     min-height: 100vh;
 }
 
-/* font-family: 'Berkshire Swash', cursive;
-font-family: 'Libre Baskerville', serif;
+/* font-family: 'Berkshire Swash', cursive; ===> Header and Footer
+font-family: 'Libre Baskerville', serif;    ===> Nav menu
 font-family: 'Playfair Display', serif; */
 
 /*---------------------------------------------------------------------- Header */
+
+/* Logo */
+
 .logo {
     margin: 10px 0 10px 10px;
 }
@@ -22,6 +25,25 @@ font-family: 'Playfair Display', serif; */
     font-size: 24px;
     text-align: left;
 }
+
+/* Navigation menu */
+
+.navbar-dark .navbar-nav .nav-link {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f2ae2e;
+}
+
+.navbar-dark .navbar-nav .nav-link .active-page {
+    color: #f2ae2e;
+}
+
+/* Responsive header */
 
 @media(max-width: 375px) {
     .navbar {
@@ -41,18 +63,12 @@ font-family: 'Playfair Display', serif; */
     }
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #f2f2f2;
-    text-decoration: none;
+@media(max-width: 768px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 14px;
+    }
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #f2ae2e;
-}
-
-.navbar-dark .navbar-nav .nav-link .active-page {
-    color: #f2ae2e;
-}
 /*---------------------------------------------------------------------- Section */
 
 
@@ -92,4 +108,16 @@ footer {
 
 .social-links a:hover {
     color: #f2ae2e;
+}
+
+/* responsive footer */
+
+@media(max-width: 425px) {
+    .copyright,.social-links a {
+        font-size: 14px;
+    }
+
+    .social-links a {
+        margin: 0 3px;
+    }    
 }
