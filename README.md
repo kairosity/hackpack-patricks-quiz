@@ -14,34 +14,34 @@
 ![fork](static/assets/images/readme-images/checkMaster/switch-base.png)
 
 ### 4. Now it's pulling the master to my repo. Click create pull request
-![fork](assets/images/readme-images/checkMaster/pull-master-to-mine.png)
+![fork](static/assets/images/readme-images/checkMaster/pull-master-to-mine.png)
 
 ### 5. Add any notes. Only for your reference then click  create pull request.
-![fork](assets/images/readme-images/checkMaster/create-pull-request.png)
+![fork](static/assets/images/readme-images/checkMaster/create-pull-request.png)
 
 ### 5. If no conflicts click merge 
-![fork](assets/images/readme-images/checkMaster/merge-pull-requests.png)
+![fork](static/assets/images/readme-images/checkMaster/merge-pull-requests.png)
 
 ### 6. Now your repo is up-to-date with current master and you can work on it as normal.
-![fork](assets/images/readme-images/checkMaster/now-mine.png)
+![fork](static/assets/images/readme-images/checkMaster/now-mine.png)
 
 ## Pulling your work up to the master file
 
 ### You work on your master exactly as you normally would, once your happy with your alterations and want to send your feature to the main master do the following.
 
 ### 1. In your GitHub click Pull requests then New Pull request
-![fork](assets/images/readme-images/pushToMaster/your-pull-request.png)
+![fork](static/assets/images/readme-images/pushToMaster/your-pull-request.png)
 
 ### 2. Check it's able to merge the alterations between your and the master will be shown below. Then click create pull request
-![fork](assets/images/readme-images/pushToMaster/able-to-merge.png)
+![fork](static/assets/images/readme-images/pushToMaster/able-to-merge.png)
 
 ### 3. Give your merge a title and description. Click create pull request.
-![fork](assets/images/readme-images/pushToMaster/describe-and-merge.png)
+![fork](static/assets/images/readme-images/pushToMaster/describe-and-merge.png)
 
 ## On the MASTER project. in Karina's GitHub
 
 ### 1. Go to pull request and click merge pull requests
-![fork](assets/images/readme-images/pushToMaster/recieving-the-merge-request.png)
+![fork](static/assets/images/readme-images/pushToMaster/recieving-the-merge-request.png)
 
 ### 2. Any alterations effecting others code may need to be discussed but thats the end of that!
 
