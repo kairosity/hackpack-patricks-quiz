@@ -1,5 +1,51 @@
 # **Patrick's Quiz**
 
+# Hack Pack Forking and pulling
+
+## Checking your Fork is upto date with master everytime you log on
+
+### 1. Go to our collab work space and click fork in the top right to copy workspace to YOUR GitHub.
+![fork](static/assets/images/readme-images/checkMaster/fork-repo.png)
+
+### 2. EVERY TIME you go to work on YOUR repo check it's up to date with master. If it's behind it will show this so click on pull request on the right. Or look to compare.
+![behind master](static/assets/images/readme-images/checkMaster/behind-master.png)
+
+### 3. To update your version with master click "switch base"
+![fork](static/assets/images/readme-images/checkMaster/switch-base.png)
+
+### 4. Now it's pulling the master to my repo. Click create pull request
+![fork](static/assets/images/readme-images/checkMaster/pull-master-to-mine.png)
+
+### 5. Add any notes. Only for your reference then click  create pull request.
+![fork](static/assets/images/readme-images/checkMaster/create-pull-request.png)
+
+### 5. If no conflicts click merge 
+![fork](static/assets/images/readme-images/checkMaster/merge-pull-requests.png)
+
+### 6. Now your repo is up-to-date with current master and you can work on it as normal.
+![fork](static/assets/images/readme-images/checkMaster/now-mine.png)
+
+## Pulling your work up to the master file
+
+### You work on your master exactly as you normally would, once your happy with your alterations and want to send your feature to the main master do the following.
+
+### 1. In your GitHub click Pull requests then New Pull request
+![fork](static/assets/images/readme-images/pushToMaster/your-pull-request.png)
+
+### 2. Check it's able to merge the alterations between your and the master will be shown below. Then click create pull request
+![fork](static/assets/images/readme-images/pushToMaster/able-to-merge.png)
+
+### 3. Give your merge a title and description. Click create pull request.
+![fork](static/assets/images/readme-images/pushToMaster/describe-and-merge.png)
+
+## On the MASTER project. in Karina's GitHub
+
+### 1. Go to pull request and click merge pull requests
+![fork](static/assets/images/readme-images/pushToMaster/recieving-the-merge-request.png)
+
+### 2. Any alterations effecting others code may need to be discussed but thats the end of that!
+
+
 # Hack Pack Team Project Workflow
 
 ### 1. Open project repo via GitPod
