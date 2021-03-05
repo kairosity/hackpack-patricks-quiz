@@ -5,16 +5,38 @@
 {% endblock %}
 
 {% block content %}
-
+    
 {% if session["user"] %}
 
-    <h1>Welcome {{session["user"]}}</h1>
-    
-    <h2>This is where code goes for what a user sees on the homepage when they are logged in. </h2>
-    <h3>As it doesn't make sense for them to see login & register anymore. </h3>
+<section class="container-fluid home-section">
+    <div class="row home-text">
+        <div class="col">
+            <h1>Welcome to Patrick's Quiz!</h1>
+            <p>
+                Here we celebrate Saint Patrick's Day with together by playing a Pub Quiz! That's right, you can challenge your peers and yourself 
+                in a fun environment and learn about Paddy and his country's culture.<br>
+                To get started all you need to do is register or login with the links below.<br>
+                You have access to all the knowledge you need on the <a href="#">Get to know Paddy's page</a>.<br>
+                So what are you waiting for, have some fun with your friends and family!
+            </p>
+        </div>
+    </div>
+    <div class="row home-button-section">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="home-button">
+                <a href="{{url_for('create_battle')}}">Create a Battle!</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="home-button">
+                <a href="{{url_for('join_battle')}}">Join a Battle</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <a href="{{url_for('create_battle')}}">Create a Battle!</a>
-    <a href="{{url_for('join_battle')}}">Join a Battle</a>
+    
+    
 
 {% else %}
 
