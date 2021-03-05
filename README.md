@@ -397,7 +397,8 @@ For general database on software development.
 ### Images :
 
 * Pictures from [Freepik](www.freepik.com):
-[Party vector created by freepik](https://www.freepik.com/vectors/party) 
+[Party vector created by freepik](https://www.freepik.com/vectors/party)  
+[Party vector created by freepik](https://www.freepik.com/vectors/celebration)
     
 ### Aknowledgements :
 
