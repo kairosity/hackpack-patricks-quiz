@@ -181,7 +181,7 @@ def join_battle():
 
                 for instance in battles:
                     if instance['battle_pin'] == inserted_pin:
-                        return render_template("battleground.html", battle_pin=inserted_pin, battle=instance)
+                        return redirect(url_for('battleground', battle_pin=inserted_pin))
 
                     else:
                         flash("Sorry, but that battle pin is incorrect. Please try again.")
@@ -198,9 +198,13 @@ def join_battle():
 
 
 
-@app.route("/battleground")
-def battleground():
-    return render_template("battleground.html")
+@app.route("/battleground/<battle_pin>")
+def battleground(battle_pin):
+
+    battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
+    battle_name = battle["battle_name"]
+
+    return render_template("battleground.html", battle_pin=battle_pin, battle_name=battle_name)
 
 
 if __name__ == "__main__":
