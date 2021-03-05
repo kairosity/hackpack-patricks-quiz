@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    <body>
 
         <h1>Welcome to the {{battle_name}} battleground!</h1>
         <h2>If you want to invite more people to this Quiz, your pin is {{battle_pin}}</h2>
@@ -23,7 +22,9 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -34,5 +35,3 @@
         crossorigin="anonymous"></script>
     <script src="./static/assets/scripts/questions.js"></script>
     <script src="./static/assets/scripts/quiz.js"></script>
-</body>
-{% endblock %}
