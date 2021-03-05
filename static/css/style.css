@@ -9,6 +9,10 @@ font-family: 'Pacifico', cursive;     ===> Text         */
 
 /*---------------------------------------------------------------------- Header */
 
+/* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
+body { 
+    padding-top: 165px; 
+}
 /* Logo */
 
 .logo {
