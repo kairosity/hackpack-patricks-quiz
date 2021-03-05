@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"
         media="all">
-    
-    <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}"/>
+
+    <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}" />
     <title>Patrick's Quiz</title>
     <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css"> -->
 </head>
 
 <body>
@@ -54,6 +55,8 @@
             </div>
         </nav>
     </header>
+    <!-- Home page - Thus far this has the 2 links to register 
+        & login and definitely needs a title, an introduction to the concept and some information about Paddy’s day.,, etc… -->
 
     <section>
         <a href="{{url_for('login')}}" id="login-button">Login</a>
@@ -61,6 +64,37 @@
     </section>
 
     <footer>
+        <div class="row footer-container">
+            <div class="col-6 copyright">For educational use.</div>
+            <div class="col-6 social-links">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" rel="noopener" target="_blank">
+                            <i class="fab fa-pinterest-square"></i>
+                            <span class="sr-only">Pinterest.com</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" rel="noopener" target="_blank">
+                            <i class="fab fa-youtube-square"></i>
+                            <span class="sr-only">Youtube.com</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" rel="noopener" target="_blank">
+                            <i class="fab fa-instagram-square"></i>
+                            <span class="sr-only">Instagram.com</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" rel="noopener" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                            <span class="sr-only">Facebook.com</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
     </footer>
 
