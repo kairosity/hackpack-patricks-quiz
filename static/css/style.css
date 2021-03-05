@@ -43,6 +43,22 @@ body {
     color: #f2ae2e;
 }
 
+/* Flash Messages */
+
+h4.flashmsg {
+    line-height: 3;
+    color:white;
+    margin: 0 auto;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.6rem;
+
+    
+}
+.flashes{
+    background-color: green;
+    justify-content: center;
+}
+
 /* Responsive header */
 
 @media(max-width: 375px) {
