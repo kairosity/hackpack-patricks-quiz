@@ -5,13 +5,13 @@
 ## Checking your Fork is upto date with master everytime you log on
 
 ### 1. Go to our collab work space and click fork in the top right to copy workspace to YOUR GitHub.
-![fork](assets/images/readme-images/checkMaster/fork-repo.png)
+![fork](static/assets/images/readme-images/checkMaster/fork-repo.png)
 
 ### 2. EVERY TIME you go to work on YOUR repo check it's up to date with master. If it's behind it will show this so click on pull request on the right. Or look to compare.
-![behind master](assets/images/readme-images/checkMaster/behind-master.png)
+![behind master](static/assets/images/readme-images/checkMaster/behind-master.png)
 
 ### 3. To update your version with master click "switch base"
-![fork](assets/images/readme-images/checkMaster/switch-base.png)
+![fork](static/assets/images/readme-images/checkMaster/switch-base.png)
 
 ### 4. Now it's pulling the master to my repo. Click create pull request
 ![fork](assets/images/readme-images/checkMaster/pull-master-to-mine.png)
