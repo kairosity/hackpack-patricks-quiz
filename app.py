@@ -120,12 +120,9 @@ def create_battle():
                 battle_pin = rand_num()
                 existing_battle_pin = mongo.db.battles.find_one({"battle_pin": battle_pin})
 
-                # this is not right yet.
                 while existing_battle_pin != None:
                     battle_pin = rand_num()
                     existing_battle_pin = mongo.db.battles.find_one({"battle_pin": battle_pin})
-
-                print(battle_pin)
 
                 register_battle = {
                 "battle_name": request.form.get("battle_name").lower(),
