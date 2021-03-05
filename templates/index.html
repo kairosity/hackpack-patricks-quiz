@@ -16,11 +16,11 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"
         media="all">
     
-    <link rel="shortcut icon" type="image/jpg" href="../assets/images/logo/favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}"/>
     <title>Patrick's Quiz</title>
     <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
 </head>
 
 <body>
@@ -56,8 +56,8 @@
     </header>
 
     <section>
-        <a href="{{url_for('login')}}">Login</a>
-        <a href="{{url_for('register')}}">Register</a>
+        <a href="{{url_for('login')}}" id="login-button">Login</a>
+        <a href="{{url_for('register')}}" id="register-button">Register</a>
     </section>
 
     <footer>
