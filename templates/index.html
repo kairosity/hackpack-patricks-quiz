@@ -46,10 +46,32 @@
     </header>
     <!-- Home page - Thus far this has the 2 links to register 
         & login and definitely needs a title, an introduction to the concept and some information about Paddy’s day.,, etc… -->
-<section>Testing</section>
-<section>
-    <a href="{{url_for('login')}}" id="login-button">Login</a>
-    <a href="{{url_for('register')}}" id="register-button">Register</a>
+<section class="container-fluid home-section">
+    <div class="row home-text">
+        <div class="col">
+            <h1>Welcome to Patrick's Quiz!</h1>
+            <p>
+                Here we celebrate Saint Patrick's Day with together by playing a Pub Quiz! That's right, you can challenge your peers and yourself 
+                in a fun environment and learn about Paddy and his country's culture.<br>
+                To get started all you need to do is register or login with the links below.<br>
+                You have access to all the knowledge you need on the <a href="#">Get to know Paddy's page</a>.<br>
+                So what are you waiting for, have some fun with your friends and family!
+            </p>
+        </div>
+    </div>
+    <div class="row home-button-section">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="home-button">
+                <a href="{{url_for('login')}}">Login</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="home-button">
+                <a href="{{url_for('register')}}">Register</a>
+            </div>
+        </div>
+    </div>
+    
 </section>
 
 {% endblock %}
