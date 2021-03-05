@@ -68,6 +68,14 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
+    if request.method == "GET":
+        if session:
+            if 'user' in session:
+                flash("You are already logged in.")
+                return redirect(url_for('home'))
+        else:
+            return render_template("login.html")
+
     if request.method == "POST":
         email = request.form.get("email").lower()
         password = request.form.get("password")
@@ -89,7 +97,21 @@ def login():
             flash("Incorrect username and/or password!")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+
+@app.route("/logout", )
+def logout():
+
+    if session:
+        if 'user' in session:
+            session.pop("user", None)
+            flash("You've been logged out")
+            return redirect(url_for("login"))
+        else:
+            flash("You're not logged in.")
+            return redirect(url_for("login"))
+    else:
+        flash("You're not logged in.")
+        return redirect(url_for("login"))
 
 
 def rand_num():
@@ -141,20 +163,31 @@ def create_battle():
 @app.route("/join-battle", methods=["GET", "POST"])
 def join_battle():
 
-    if request.method == "POST":
-        inserted_pin = int(request.form.get("pin"))
-        battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
-        battles = mongo.db.battles.find()
+    if session:
+        if 'user' in session:
 
-        print(battles)
+            if request.method == "POST":
+                inserted_pin = int(request.form.get("pin"))
+                battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
+                battles = mongo.db.battles.find()
 
-        for instances in battles:
-            if instances['battle_pin'] == inserted_pin:
-                return render_template("battleground.html")
-            else:
-                return render_template("join-battle.html")
+                print(battles)
 
-    return render_template("join-battle.html")
+                for instance in battles:
+                    if instance['battle_pin'] == inserted_pin:
+                        return render_template("battleground.html")
+                    else:
+                        return render_template("join-battle.html")
+
+            return render_template("join-battle.html")
+
+        else:
+            flash("You need to be logged in to join a quiz battle!")
+            return redirect(url_for('login'))
+    else:
+        flash("You need to be logged in to join a quiz battle!")
+        return redirect(url_for('login'))
+
 
 
 @app.route("/battleground")

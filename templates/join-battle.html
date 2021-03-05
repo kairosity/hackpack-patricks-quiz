@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <section>
+    <!-- Flash Messages displayed here -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h4 class="flashmsg center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
     <div class="row">
         <form class="col s12" action="{{ url_for('join_battle') }}" method="POST">
             <div class="row">

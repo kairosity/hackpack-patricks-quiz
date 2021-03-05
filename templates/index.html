@@ -19,8 +19,8 @@
     <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}"/>
     <title>Patrick's Quiz</title>
     <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    type="text/css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css"> -->
 </head>
 
 <body>
@@ -54,6 +54,19 @@
             </div>
         </nav>
     </header>
+<section>Testing</section>
+<section>
+    <!-- Flash Messages displayed here -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h4 class="flashmsg center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
 
     <section>
         <a href="{{url_for('login')}}" id="login-button">Login</a>
