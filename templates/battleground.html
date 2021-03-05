@@ -1,33 +1,76 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <title>Document</title>
+<title>Document</title>
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid game-container">
-        <div class="container-fluid d-flex no-gutters" id="quiz-board">
-            <div class="row question-row">
-                <div class="col-12 col-md-6"></div>
+
+<!-- Game Modals -->
+
+<!-- welcome Modal -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content welcomeMenu">
+            <div class="modal-header d-block">
+                <h1 class="modal-title text-center">Welcome to the {{battle_name}} battleground!</h1>
+                <h2 class="modal-title text-center">If you want to invite more people to this Quiz, your pin is {{battle_pin}}</h2>
             </div>
-            <div class="row answer-row">
-                <div class="col-3 answer"></div>
-                <div class="col-3 answer"></div>
-                <div class="col-3 answer"></div>
+            <div class="modal-body"> 
+                <ul>
+                    <li>
+                        <p>You have 60 seconds to complete the following 10 questions.</p>
+                    </li>
+                    <li>
+                        <p>Questions are either multiple choice or true or false.</p>
+                    </li>
+                    <li>
+                        <p>There are 3 rounds in total.</p>
+                    </li>
+                    <li>
+                        <button type="button" class="btn menu-button button-click"
+                            onclick="window.location.href=window.location.href;" data-dismiss="modal">
+                            start</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn exit-button button-click"
+                            onclick="window.location.href='index.html';" data-dismiss="modal">Exit back to home screen</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+
+<div class="container-fluid game-container">
+    <div class="container-fluid d-flex no-gutters" id="quiz-board">
+        <div class="row question-row">
+            <div class="col-3 q&a number">
+                <span id= "question-number">1.</span>
+            </div>
+            <div class="col-9 q&a question">
+                <span id= "question">TEST QUESTION CONTENT</span>
+            </div>
+        </div>
+        <div class="row answer-row">
+            <div class="col-3 answer1">ANSWER 1</div>
+            <div class="col-3 answer2">ANSWER 2</div>
+            <div class="col-3 answer3">ANSWER 3</div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="./static/assets/scripts/questions.js"></script>
-    <script src="./static/assets/scripts/quiz.js"></script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="./static/assets/scripts/questions.js"></script>
+<script src="./static/assets/scripts/quiz.js"></script>
