@@ -176,16 +176,14 @@ def join_battle():
 
             if request.method == "POST":
                 inserted_pin = int(request.form.get("pin"))
-                # battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
-                battles = list(mongo.db.battles.find())
 
-                for instance in battles:
-                    if instance['battle_pin'] == inserted_pin:
-                        return redirect(url_for('battleground', battle_pin=inserted_pin))
+                battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
 
-                    else:
-                        flash("Sorry, but that battle pin is incorrect. Please try again.")
-                        return render_template("join-battle.html")
+                if battle is not None:
+                    return redirect(url_for('battleground', battle_pin=inserted_pin))
+                else:
+                    flash("Sorry, but that battle pin is incorrect. Please try again.")
+                    return render_template("join-battle.html")
 
             return render_template("join-battle.html")
 

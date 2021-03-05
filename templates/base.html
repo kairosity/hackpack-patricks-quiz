@@ -77,22 +77,22 @@
     </header>
 
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
+   
+        <div class="flashes row">
+            
                  <!-- Flash Messages displayed here -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
-    <div class="row flashes">
-        <h4 class="flashmsg center-align">{{ message }}</h4>
-    </div>
+    
+        <h4 class="flashmsg">{{ message }}</h4>
+  
     {% endfor %}
     {% endif %}
     {% endwith %}
             </div>
-        </div>
-    </div>
+       
+   
 
    
 </section>
