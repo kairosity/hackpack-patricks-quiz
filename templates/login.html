@@ -1,27 +1,16 @@
- <!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
+{% block title %}
     <title>Login</title>
-</head>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+{% endblock %}
  
-<body>
-    <section>
-    <!-- Flash Messages displayed here -->
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <div class="row flashes">
-        <h4 class="flashmsg center-align">{{ message }}</h4>
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-</section>
+
+{% block content %}
 
  <div class="row">
         
@@ -44,4 +33,4 @@
         </form>
     </div>
   </div>
-  </body>
+{% endblock %}
