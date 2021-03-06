@@ -1,131 +1,18 @@
+/*---------------------------------------------------------------------- Body */
+
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap');
 
 
 /* font-family: 'Berkshire Swash', cursive; ===> Header / Footer / titles
-font-family: 'Libre Baskerville', serif;    ===> Nav menu / Text
-font-family: 'Pacifico', cursive;     ===>          */ 
-
-/*---------------------------------------------------------------------- Common style */
-
-/* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
-body { 
-    margin-top: 136px !important;
-}
-
-
-/*Credit for the background image : https://www.freepik.com/vectors/celebration' 
-Celebration vector created by freepik - www.freepik.com */
-
-.home-section,
-.background-style {
-    /* min-height: 100vh; */
-    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.home-section::before,
-.background-style::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #1b1b1bcc;
-}
-
-/* ---------------------------------- H1 */
-
-h1 {
-    font-family: 'Berkshire Swash', cursive;
-    color: #f2f2f2;
-    font-size: 60px;
-    margin: 40px 5px;
-    /* padding-top: 3rem; */
-}
-
-/* ---------------------------------- forms */
-
-label {
-    font-family: 'Pacifico', cursive;
-    color: #f2f2f2;
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: 2px;
-}
-
-/* ---------------------------------- Button */
-
-
-.button-section {
-    margin: 33px 0;
-    text-align: center;
-}
-
-
-.button-style {
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 33px;
-    letter-spacing: 3px;
-    border: 6px outset #8c512e;
-    background-color: #f2ae2e;
-    margin-bottom: 20px;
-    padding: 12px;
-    width: 60%;
-    -webkit-user-select: none; 
-    -khtml-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-    color: white;
-}
-
-.button-style:hover {
-    box-shadow: 0px 0px 20px gold;
-    transition: box-shadow 0.4s ease-in-out;
-    text-decoration: none;
-    color: white;
-}
-
-/* Responsive content */
-
-@media(max-width: 1260px) {
-    .button-style {
-        font-size: 22px;
-    }
-}
-
-@media(max-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
-
-    .button-style {
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 768px) {
-    h1 {
-        font-size: 30px;
-    }
-
-    .button-style {
-        width: auto;
-    }
-}
-
-@media(max-width: 345px) {
-    .button-style {
-        padding: 6px;
-    }
-}
+font-family: 'Libre Baskerville', serif;    ===> Nav menu
+font-family: 'Pacifico', cursive;     ===> Text         */ 
 
 /*---------------------------------------------------------------------- Header */
 
-
-
+/* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
+body { 
+    padding-top: 136px; 
+}
 /* Logo */
 
 .logo {
@@ -175,9 +62,6 @@ h4.flashmsg {
 /* Responsive header */
 
 @media(max-width: 375px) {
-    body { 
-        padding-top: 102px; 
-    }
     .navbar {
         padding: 8px;
     }
@@ -201,11 +85,36 @@ h4.flashmsg {
     }
 }
 
-/*---------------------------------------------------------------------- Home-Section */
+/*---------------------------------------------------------------------- Section */
+/*Credit for the background image : https://www.freepik.com/vectors/celebration' Celebration vector created by freepik - www.freepik.com */
+.home-section {
+    height: 100vh;
+    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.home-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1b1b1bcc;
+}
 
 .home-text {
     text-align: center;
     margin: 0 20px 20px;
+}
+
+.home-text h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #f2f2f2;
+    font-size: 60px;
+    margin: 40px;
+    padding-top: 3rem;
 }
 
 .home-text p {
@@ -214,6 +123,35 @@ h4.flashmsg {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 2px;
+}
+
+.home-button-section {
+    margin: 50px;
+    text-align: center;
+}
+
+.home-button {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 33px;
+    letter-spacing: 3px;
+    border: 6px outset #8c512e;
+    background-color: #f2ae2e;
+    margin: 30px;
+    padding: 12px;
+    width: 60%;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    color: white;
+}
+
+.home-button:hover {
+    box-shadow: 0px 0px 20px gold;
+    transition: box-shadow 0.4s ease-in-out;
+    text-decoration: none;
+    color: white;
 }
 
 #battle_name {
@@ -242,25 +180,25 @@ h4.flashmsg {
     color: white; 
 }
 
-<<<<<<< HEAD
-/* Responsive home-content */
-=======
 .welcomeMenu {
     font-family: 'Berkshire Swash', cursive;
-    background:#46a637;
+    background: #46a637;
     color: white;
 }
 
 /* Responsive content */
->>>>>>> 999ba4b (battleground modal working and styled)
 
-@media(max-width: 768px) {
-    .home-text {
-        margin: 0;
+@media(max-width: 900px) {
+    .home-button {
+        font-size: 16px;
     }
+
+    .home-text h1 {
+        font-size: 30px;
+    }
+
     .home-text p {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 12px;
     }
 }
 
@@ -308,6 +246,3 @@ footer {
         margin: 0 3px;
     }    
 }
-
-/*---------------------------------------------------------------------- Registration */
-
