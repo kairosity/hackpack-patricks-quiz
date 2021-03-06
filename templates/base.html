@@ -46,25 +46,25 @@
             <div id="navbarToggle" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active-page" href="{{url_for('home')}}">Home /</a>
+                        <a class="nav-link active-page" href="{{url_for('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Get to Know Paddy /</a>
+                        <a class="nav-link" href="#">Get to Know Paddy</a>
                     </li>
                     
                     {% if session['user'] %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('create_battle')}}">Create a Quiz Battle /</a>
+                        <a class="nav-link" href="{{url_for('create_battle')}}">Create a Quiz Battle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('join_battle')}}">Join a Quiz Battle /</a>
+                        <a class="nav-link" href="{{url_for('join_battle')}}">Join a Quiz Battle</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('login')}}">Login /</a>
+                        <a class="nav-link" href="{{url_for('login')}}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('register')}}">Register</a>
