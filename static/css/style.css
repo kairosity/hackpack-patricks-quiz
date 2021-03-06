@@ -306,6 +306,7 @@ footer {
     text-align: center;
 }
 
+.create-button .button-style,
 .register-button .button-style,
 .login-button .button-style {
     margin-top: 30px;
