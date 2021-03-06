@@ -6,12 +6,12 @@ let Round2Score = 0; //store result from round
 let Round3Score = 0; //store result from round
 let time = 60000; //estimated starting time of 60s for 10 questions. may be too long
 
+let questionBlock = document.querySelector("#question")  //CS --> On line 70 you are telling the pc to append "question" to questionBlock but you didn't define it so here it is.
+
 $(window).on('load', function() {
         $('#welcomeModal').modal('show'); //Triggers welcome modal on page load
         $("#timer").html(startTime); //sets start time display before timer() function is called
     });
-
-document.getElementById("startGame").onclick = function() {startGame()}; //when the start game button on welcomeModal is clicked it calls game function
 
 //This function selects the question object to access depending on the level
 //Stolen from Claudio's MS2
@@ -25,6 +25,13 @@ function questionSelector(round) {
     }
 };
 
+document.getElementById("startGame").onclick = function() {
+    questionSelector(round)
+    startGame(levelQuestion)
+}; 
+//when the start game button on welcomeModal is clicked it calls game function
+//CS --> Passed the question array and included the questionSelector function so it runs when the button is clicked. That will gives us the "levelQuestion" to pass in startGame                                                                                        
+
 //This function clears all elements children of the main question display spans
 function clearContent() {
     $("#question").html("");
@@ -35,21 +42,17 @@ function clearContent() {
     $("#answer3").html("");
 }
 
-function startGame() {
-    timer(time); //starts timer() countdown from time variable
-    console.log("test");
+function startGame(questions) {
+    //timer(time); //starts timer() countdown from time variable              // CS --> Commented out this function so it doesn't run whiel we are building the quiz. Once it's dow we need to bring it back to life
+    displayQuestions(questions)
     //Need to trigger first question load in here
 };
 
 //This function displays the questions and answers ********** Lot's to do!
 function displayQuestions(arr) {
-    clearContent();
+    clearBlock();
 
     //This part of the function displays the question inside #questionBlock
-
-    /* I've copied your structure here claudio but it doesn't need to be a random question. 
-    Just needs to run through each question in each category in the questions.js 
-    if you can help ammend */
     let randomIndex = Math.floor(Math.random() * arr.length);
 
     let objectQuestion = arr[randomIndex];
@@ -62,9 +65,6 @@ function displayQuestions(arr) {
     questionBlock.append(question);
 
     //This part of the function displays the answer options inside #questionBlock
-
-    /* Again doesn't need to create element can just fill ineerhtml of the span
-    though it would be easier.... */
     let answerBlock = document.createElement("ul");
     questionBlock.append(answerBlock);
 
@@ -82,6 +82,7 @@ function displayQuestions(arr) {
     });
 }
 
+
 //This function shows if the selected answer is correct or not and acts accordingly. 
 function scoreAnswer(answerSelected) {
         var e = event.target;
@@ -89,34 +90,31 @@ function scoreAnswer(answerSelected) {
         if (e.matches("li")) {
             let selectedItem = e.textContent;
 
-            if (selectedItem === answerSelected.answer && level < 20) {
+            if (selectedItem === answerSelected.answer && round <= 3) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
-                    removeElement("level-block");
-                    questionSelector(level);
-                    displayQuestions(levelQuestion);
-                    questionDuration = 15;
-                    secondsElapsed = 0;
-                    displayLevel();
-                    updateScore(); 
-                    randomQuotes(quotes);                 
+                    questionSelector(round);
+                    displayQuestions(levelQuestion);               
                 }, 500);   
                 level++;
-            } else if (selectedItem === answerSelected.answer && level === 20) {
+            } else if (selectedItem === answerSelected.answer) {
                 e.setAttribute("style", "background-color: green");    
-                setTimeout(function() {                    
-                    endOfGame();                
+                setTimeout(function() {    
+                    questionSelector(round);
+                    displayQuestions(levelQuestion);            
                 }, 500); 
                 stopTimer();             
             } else {
                 e.setAttribute("style", "background-color: red");
                 setTimeout(function() {
-                    finalScore();
+                    questionSelector(round);
+                    displayQuestions(levelQuestion); 
                 }, 500);
                 stopTimer();
             }
         }
 }
+
 
 /*
 Display functions for time and highscores.......
