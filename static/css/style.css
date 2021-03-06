@@ -51,7 +51,7 @@ label {
 
 /* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
 body { 
-    padding-top: 136px; 
+    margin-top: 136px; 
 }
 /* Logo */
 

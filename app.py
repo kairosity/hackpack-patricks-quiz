@@ -156,7 +156,8 @@ def create_battle():
                 register_battle = {
                 "battle_name": battle_name,
                 "players": [user_id],
-                "battle_pin": battle_pin
+                "battle_pin": battle_pin,
+                "scores": []
                 }
 
                 mongo.db.battles.insert_one(register_battle)
@@ -180,7 +181,17 @@ def join_battle():
                 battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
 
                 if battle is not None:
-                    return redirect(url_for('battleground', battle_pin=inserted_pin))
+
+                    user_name = session["user"]
+                    user = mongo.db.users.find_one({"username": user_name})
+
+                    # adds player username to battle's players array
+                    mongo.db.battles.update_one({"battle_pin": inserted_pin},
+                                                 {'$push': {"players": user["_id"]}})
+
+
+                    return redirect(url_for('battleground', battle_pin=inserted_pin, username=user_name))
+
                 else:
                     flash("Sorry, but that battle pin is incorrect. Please try again.")
                     return render_template("join-battle.html")
@@ -196,13 +207,50 @@ def join_battle():
 
 
 
-@app.route("/battleground/<battle_pin>")
-def battleground(battle_pin):
+@app.route("/battleground/<battle_pin>/<username>")
+def battleground(battle_pin, username):
+
+    if request.method == "POST":
+        # player_score = request.form.get("score")
+
+        player_score = "23"
+
+        # Add this player score into the array of battle_scores
+
+        mongo.db.battles.update_one({"battle_pin": int(battle_pin)},
+                                    {'$push':
+                                    {"battle_scores":
+                                     [username, int(player_score)]}})
+
+        battle_scores = battle["battle_scores"]
+
+        print(battle_scores)
+
+        # Send the updated battle_pin to the leaderboard for display
+        # the battle pin will contain the updated scores via the battle obj.
+
+        return redirect(url_for('leaderboard', battle_pin=battle_pin))
 
     battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
     battle_name = battle["battle_name"]
+    player = mongo.db.users.find_one({"username":username})
 
-    return render_template("battleground.html", battle_pin=battle_pin, battle_name=battle_name)
+    return render_template("battleground.html",
+                           battle_pin=battle_pin,
+                           battle_name=battle_name,
+                           player=player, battle=battle)
+
+
+@app.route("/leaderboard/<battle_pin>")
+def leaderboard(battle_pin):
+
+    # use the battle pin to return the correct battle for score display
+
+    # find the updated battle scores array and sanitize it for displaying. 
+
+
+
+    return render_template('leaderboard.html', battle=battle, battle_scores=battle_scores)
 
 
 if __name__ == "__main__":
