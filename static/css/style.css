@@ -138,7 +138,7 @@ label {
     text-align: left;
 }
 
-/* Navigation menu */
+/* -------------------------------- Navigation menu */
 
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Libre Baskerville', serif;
@@ -173,6 +173,18 @@ h4.flashmsg {
 
 /* Responsive header */
 
+@media(max-width: 1200px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 992px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 12px;
+    }
+}
+
 @media(max-width: 375px) {
     body { 
         padding-top: 102px; 
@@ -194,11 +206,6 @@ h4.flashmsg {
     }
 }
 
-@media(max-width: 768px) {
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 14px;
-    }
-}
 
 /*---------------------------------------------------------------------- Home-Section */
 
