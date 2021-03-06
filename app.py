@@ -189,7 +189,6 @@ def join_battle():
 
                 battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
 
-                print("got here")
                 if battle is not None:
 
                     user_name = session["user"]
@@ -221,14 +220,14 @@ def join_battle():
         return redirect(url_for('login'))
 
 
-
 @app.route("/battleground/<battle_pin>/<username>", methods=["GET", "POST"])
 def battleground(battle_pin, username):
 
     if request.method == "POST":
-        # player_score = request.form.get("score")
-        print("posted")
-        player_score = "23"
+        player_score = request.form.get("score")
+
+        print(player_score)
+        # player_score = "23"
 
         # Add this player's score into the array of battle_scores
 
@@ -240,7 +239,6 @@ def battleground(battle_pin, username):
         battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
         battle_scores = battle["battle_scores"]
 
-        print(battle_scores)
 
         # Send the updated battle_pin to the leaderboard for display
         # the battle pin will contain the updated scores via the battle obj.
@@ -264,7 +262,6 @@ def leaderboard(battle_pin):
     # find the updated battle scores array and sanitize it for displaying. 
 
     battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
-    print(battle)
 
     return render_template('leaderboard.html', battle=battle)
 

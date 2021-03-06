@@ -322,3 +322,18 @@ footer {
         font-size: 18px;
     }
 }
+
+
+/* Leaderboard */
+
+.leaderboard-container{
+    background-color: #f2ae2e;
+    height: 100vh;
+}
+.leaderboard-scores{
+    background-color: green;
+}
+.leaderboard-heading{
+    margin-top: 0;
+    padding-top: 3rem;
+}
