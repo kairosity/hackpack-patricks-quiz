@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{battle}}</h2>
+
+{% for score in battle.battle_scores %}
+    <h3>{{score}}</h3>
+{% endfor %}
+
+{% for player in battle.players %}
+    <h3>{{player}}</h3>
+{% endfor %}
+
+
+{% endblock %}
