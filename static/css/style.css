@@ -177,22 +177,31 @@ label {
     color: white;
     box-shadow: 0px 5px 0px #46a637;
 }
+
+.answersList {
+    font-family: theSimpsons;
+    list-style-type: none;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 10px auto;
+    width: 75%;
+    border: 2px solid #f05a2b;
+    border-radius: 25px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
 .center {
     text-align: center;
 }
 .btn-index {
     margin: 15px;
 }
-.btn-patrick {
-    box-shadow: 5px 5px 5px black;
-    background-color:#46a637;
-    color: white;   
-}
-.btn-index:hover, 
-.btn-patrick:hover {
-    box-shadow: 7px 7px 7px black;  
-    background-color:#37852b; 
-    color: white; 
+
 }
 /* Responsive home-content */
 @media(max-width: 768px) {

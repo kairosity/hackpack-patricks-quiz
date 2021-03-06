@@ -151,6 +151,11 @@
     <p>Player:{{player}}</p>
     <p>Battle:{{battle}}</p>
 
+    <form action="{{url_for('battleground', battle_pin=battle_pin, username=player.username)}}" method="POST">
+        <input class="hidden-score-input" type="text" name="score" id="player_score">
+        <button type="submit">Save Score!</button>
+    </form>
+
 {% endblock %}
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{battle.battle_name|capitalize}} Leaderboard</h1>
+{% for score in battle.battle_scores %}
+    <h3>Player Name:{{score[0]}}</h3>
+    <h3>Score: {{score[1]}}</h3>
+{% endfor %}
+
+
+{% endblock %}
