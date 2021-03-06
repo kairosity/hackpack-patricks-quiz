@@ -1,67 +1,64 @@
 {% extends "base.html" %}
 
 {% block title %}
-    <title>Battleground</title>
+<title>Battleground</title>
 {% endblock %}
 
 {% block content %}
 
- <div class="container-fluid game-container">
-        <div class="container-fluid d-block no-gutters" id="quiz-board">
-            <div class="row question-row">
-                <div class="col-2 q&a number">
-                    <p class="counter">Timer: <span id="timer"></span></p>
-                </div>
-                <div class="col-8 q&a question">
-                    <span id="question">TEST QUESTION CONTENT</span>
-                </div>
-                <div class="col-1 q&a score">
-                    <span id="score">1</span>
-                </div>
-                <div class="col-1 q&a out-of">
-                    <span id="out-of">/10</span>
-                </div>
+<div class="container-fluid game-container">
+    <div class="container-fluid d-block no-gutters" id="quiz-board">
+        <div class="row info-row">
+            <div class="col-2 q&a number">
+                <p class="counter">Timer: <span id="timer"></span></p>
             </div>
-            <div class="row answer-row">
-                <div class="col-4" id="answer1">ANSWER 1</div>
-                <div class="col-4" id="answer2">ANSWER 2</div>
-                <div class="col-4" id="answer3">ANSWER 3</div>
+            <div class="col-1 q&a score">
+                <span id="score">0</span>ƒ
+            </div>
+            <div class="col-1 q&a out-of">
+                <span id="out-of">/0</span>
             </div>
         </div>
+        <div class="row game-row">
+            <div class="col-8 q&a question">
+                <span id="question">TEST QUESTION CONTENT</span>
+            </div>
+        </div>
+    </div>
 
-        <!-- Game Modals -->
+    <!-- Game Modals -->
 
-        <!-- welcome Modal -->
-        <div class="modal fade in" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content welcomeMenu">
-                    <div class="modal-header d-block">
-                        <h1 class="modal-title text-center">Welcome to the {{battle_name}} battleground!</h1>
-                        <h2 class="modal-title text-center">If you want to invite more people to this Quiz, your pin is
-                            {{battle_pin}}</h2>
-                    </div>
-                    <div class="modal-body">
-                        <ul>
-                            <li>
-                                <p>You have 60 seconds to complete the following 10 questions.</p>
-                            </li>
-                            <li>
-                                <p>Questions are either multiple choice or true or false.</p>
-                            </li>
-                            <li>
-                                <p>There are 3 rounds in total.</p>
-                            </li>
+    <!-- welcome Modal -->
+    <div class="modal fade in" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content welcomeMenu">
+                <div class="modal-header d-block">
+                    <h1 class="modal-title text-center">Welcome to the {{battle_name}} battleground!</h1>
+                    <h2 class="modal-title text-center">If you want to invite more people to this Quiz, your pin is
+                        {{battle_pin}}</h2>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>
+                            <p>You have 60 seconds to complete the following 10 questions.</p>
+                        </li>
+                        <li>
+                            <p>Questions are either multiple choice or true or false.</p>
+                        </li>
+                        <li>
+                            <p>There are 3 rounds in total.</p>
+                        </li>
 
-                        </ul>
-                        <div class="row center">
-                            <div class="col-12 col-md-6 d-flex justify-content-center">
-                                <a type="button" class="home-button" id="startGame" data-dismiss="modal">
-                                    start
-                                </a>
-                            </div>
+                    </ul>
+                    <div class="row center">
                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="home-button" onclick="window.location.href='index.html';"
+                            <a type="button" class="home-button" id="startGame" data-dismiss="modal">
+                                start
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="home-button" href="{{ url_for('join_battle') }}"
                                 data-dismiss="modal">
                                 Exit
                             </a>
@@ -70,41 +67,135 @@
                 </div>
             </div>
         </div>
-        <!-- Game Won Modal -->
-        <div class="modal fade" id="gameWonModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content mainMenu">
-                    <div class="modal-header d-block">
-                        <h3 class="modal-title text-center gold-text">You finished the challenge!</h3>
-                        <h5 class="modal-title text-center">But how did you do???</h5>
+    </div>
+    <!-- Round two Modal -->
+    <div class="modal fade in" id="roundTwoModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content welcomeMenu">
+                <div class="modal-header d-block">
+                    <h1 class="modal-title text-center">Ready for Round two</h1>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>
+                            <p>You have 60 seconds to complete the following 10 questions.</p>
+                        </li>
+                        <li>
+                            <p>This round is true of false about St Patrick.</p>
+                        </li>
+                    </ul>
+                    <div class="row center">
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="home-button" id="roundTwoStart" data-dismiss="modal">
+                                start
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="home-button" href="{{ url_for('join_battle') }}"
+                                data-dismiss="modal">
+                                Exit
+                            </a>
+                        </div>
                     </div>
-                    <div class="modal-body d-block justify-content-center">
-                        <div class="game-won container">
-                            <div class="row no-gutters">
-                                <div class="col-6 score-key">
-                                    <span>Time remaining:</span>
-                                </div>
-                                <div class="col-6 score">
-                                    <span id="finishTime"></span>
-                                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Round three Modal -->
+    <div class="modal fade in" id="roundThreeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content welcomeMenu">
+                <div class="modal-header d-block">
+                    <h1 class="modal-title text-center">Ready for the final round?</h1>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>
+                            <p>You have 60 seconds to complete the following 10 questions.</p>
+                        </li>
+                        <li>
+                            <p>This round is true of false about St Patrick.</p>
+                        </li>
+                    </ul>
+                    <div class="row center">
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="home-button" id="roundThreeStart" data-dismiss="modal">
+                                start
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="home-button" href="{{ url_for('join_battle') }}"
+                                data-dismiss="modal">
+                                Exit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Game Complete Modal -->
+    <div class="modal fade" id="gameCompleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content mainMenu">
+                <div class="modal-header d-block">
+                    <h3 class="modal-title text-center gold-text">You finished the challenge!</h3>
+                    <h5 class="modal-title text-center">But how did you do???</h5>
+                </div>
+                <div class="modal-body d-block justify-content-center">
+                    <div class="game-won container">
+                        <div class="row no-gutters">
+                            <div class="col-6 score-key">
+                                <span>Time remaining:</span>
                             </div>
-                            <div class="row no-gutters">
-                                <div class="col-6 score-key">
-                                    <span>Bonus Points:</span>
-                                </div>
-                                <div class="col-6 score">
-                                    <span id="bonusPoints"></span>
-                                </div>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-6 score-key">
-                                    <span>Final Score:</span>
-                                </div>
-                                <div class="col-6 score">
-                                    <span id="finalScore"></span>
-                                </div>
+                            <div class="col-6 score">
+                                <span id="finishTime"></span>
                             </div>
                         </div>
+                        <div class="row no-gutters">
+                            <div class="col-6 score-key">
+                                <span>Bonus Points:</span>
+                            </div>
+                            <div class="col-6 score">
+                                <span id="bonusPoints"></span>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-6 score-key">
+                                <span>Final Score:</span>
+                            </div>
+                            <div class="col-6 score">
+                                <span id="finalScore"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn menu-button button-click"
+                        onclick="window.location.href=window.location.href;">
+                        Play again</button>
+                    <button type="button" class="btn exit-button button-click"
+                        onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lost Modal -->
+    <div class="modal fade" id="gameLostModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content mainMenu">
+                <div class="modal-header d-block">
+                    <h3 class="modal-title text-center gold-text">Out of time I'm afraid!</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="game-lost container justify-content-center text-center">
+                        <p>Looks like you've had one too many already! Times up I'm afraid,
+                            you just weren't quick enough....
+                        </p>
+                        <p>Better luck next time.
+                        </p>
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn menu-button button-click"
@@ -116,45 +207,20 @@
                 </div>
             </div>
         </div>
-        <!-- Lost Modal -->
-        <div class="modal fade" id="gameLostModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content mainMenu">
-                    <div class="modal-header d-block">
-                        <h3 class="modal-title text-center gold-text">Out of time I'm afraid!</h3>
-                    </div>
-                    <div class="modal-body">
-                        <div class="game-lost container justify-content-center text-center">
-                            <p>Looks like you've had one too many already! Times up I'm afraid,
-                                you just weren't quick enough....
-                            </p>
-                            <p>Better luck next time.
-                            </p>
-                        </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn menu-button button-click"
-                                onclick="window.location.href=window.location.href;">
-                                Play again</button>
-                            <button type="button" class="btn exit-button button-click"
-                                onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    
+</div>
 
-    <p>This is just for testing the code logic - ignore it for now </p>
-    <p>Battle Pin:{{battle_pin}}</p>
-    <p>Battle Name:{{battle_name}}</p>
-    <p>Player:{{player}}</p>
-    <p>Battle:{{battle}}</p>
 
-    <form action="{{url_for('battleground', battle_pin=battle_pin, username=player.username)}}" method="POST">
-        <input class="hidden-score-input" type="text" name="score" id="player_score">
-        <button type="submit">Save Score!</button>
-    </form>
+<p>This is just for testing the code logic - ignore it for now </p>
+<p>Battle Pin:{{battle_pin}}</p>
+<p>Battle Name:{{battle_name}}</p>
+<p>Player:{{player}}</p>
+<p>Battle:{{battle}}</p>
+
+<form action="{{url_for('battleground', battle_pin=battle_pin, username=player.username)}}" method="POST">
+    <input class="hidden-score-input" type="text" name="score" id="player_score">
+    <button type="submit">Save Score!</button>
+</form>
 
 {% endblock %}
 
