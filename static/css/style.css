@@ -332,8 +332,13 @@ footer {
 }
 .leaderboard-scores{
     background-color: green;
+    align-items: center;
 }
 .leaderboard-heading{
     margin-top: 0;
     padding-top: 3rem;
 }
+.scores {
+    color: white;
+}
+

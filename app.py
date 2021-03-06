@@ -262,7 +262,7 @@ def leaderboard(battle_pin):
 
     battle_scores = battle["battle_scores"]
 
-    battle_scores.sort(key=lambda x: x[1])
+    battle_scores.sort(key=lambda x: x[1], reverse=True)
 
     print(battle_scores)
 
