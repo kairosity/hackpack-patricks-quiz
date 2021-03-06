@@ -186,8 +186,13 @@ def join_battle():
                     user = mongo.db.users.find_one({"username": user_name})
 
                     # adds player username to battle's players array
-                    mongo.db.battles.update_one({"battle_pin": inserted_pin},
-                                                 {'$push': {"players": user["_id"]}})
+                    # Need to add a conditional - only add the player IF the player's not already there.
+                    players = battle["players"]
+                    user_id = user["_id"]
+
+                    if user_id not in players:
+                        mongo.db.battles.update_one({"battle_pin": inserted_pin},
+                                                    {'$push': {"players": user["_id"]}})
 
 
                     return redirect(url_for('battleground', battle_pin=inserted_pin, username=user_name))
