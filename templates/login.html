@@ -6,7 +6,7 @@
  
 
 {% block content %}
-<div class="container ">
+<div class="container-fluid background-style">
     <div class="row justify-content-center">
         <form class="login-form col-sm-12 col-md-6 col-lg-4 " method="POST" action="{{ url_for('login') }}">
             <h1 class="">Login</h1>
@@ -18,7 +18,7 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password">
         </div>
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn button-style">Login</button>
         </form>
     </div>
 </div>
