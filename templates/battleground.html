@@ -6,61 +6,141 @@
 
 {% block content %}
 
-<!-- Game Modals -->
-
-<!-- welcome Modal -->
-<div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content welcomeMenu">
-            <div class="modal-header d-block">
-                <h1 class="modal-title text-center">Welcome to the {{battle_name}} battleground!</h1>
-                <h2 class="modal-title text-center">If you want to invite more people to this Quiz, your pin is {{battle_pin}}</h2>
+ <div class="container-fluid game-container">
+        <div class="container-fluid d-block no-gutters" id="quiz-board">
+            <div class="row question-row">
+                <div class="col-2 q&a number">
+                    <p class="counter">Timer: <span id="timer"></span></p>
+                </div>
+                <div class="col-8 q&a question">
+                    <span id="question">TEST QUESTION CONTENT</span>
+                </div>
+                <div class="col-1 q&a score">
+                    <span id="score">1</span>
+                </div>
+                <div class="col-1 q&a out-of">
+                    <span id="out-of">/10</span>
+                </div>
             </div>
-            <div class="modal-body"> 
-                <ul>
-                    <li>
-                        <p>You have 60 seconds to complete the following 10 questions.</p>
-                    </li>
-                    <li>
-                        <p>Questions are either multiple choice or true or false.</p>
-                    </li>
-                    <li>
-                        <p>There are 3 rounds in total.</p>
-                    </li>
-                    <li>
+            <div class="row answer-row">
+                <div class="col-4" id="answer1">ANSWER 1</div>
+                <div class="col-4" id="answer2">ANSWER 2</div>
+                <div class="col-4" id="answer3">ANSWER 3</div>
+            </div>
+        </div>
+
+        <!-- Game Modals -->
+
+        <!-- welcome Modal -->
+        <div class="modal fade in" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content welcomeMenu">
+                    <div class="modal-header d-block">
+                        <h1 class="modal-title text-center">Welcome to the {{battle_name}} battleground!</h1>
+                        <h2 class="modal-title text-center">If you want to invite more people to this Quiz, your pin is
+                            {{battle_pin}}</h2>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>
+                                <p>You have 60 seconds to complete the following 10 questions.</p>
+                            </li>
+                            <li>
+                                <p>Questions are either multiple choice or true or false.</p>
+                            </li>
+                            <li>
+                                <p>There are 3 rounds in total.</p>
+                            </li>
+                            <li>
+                                <button type="button" class="btn menu-button button-click" id="startGame"
+                                    data-dismiss="modal">
+                                    start</button>
+                            </li>
+                            <li>
+                                <button type="button" class="btn exit-button button-click"
+                                    onclick="window.location.href='index.html';" data-dismiss="modal">Exit back to home
+                                    screen</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Game Won Modal -->
+        <div class="modal fade" id="gameWonModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content mainMenu">
+                    <div class="modal-header d-block">
+                        <h3 class="modal-title text-center gold-text">You finished the challenge!</h3>
+                        <h5 class="modal-title text-center">But how did you do???</h5>
+                    </div>
+                    <div class="modal-body d-block justify-content-center">
+                        <div class="game-won container">
+                            <div class="row no-gutters">
+                                <div class="col-6 score-key">
+                                    <span>Time remaining:</span>
+                                </div>
+                                <div class="col-6 score">
+                                    <span id="finishTime"></span>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-6 score-key">
+                                    <span>Bonus Points:</span>
+                                </div>
+                                <div class="col-6 score">
+                                    <span id="bonusPoints"></span>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-6 score-key">
+                                    <span>Final Score:</span>
+                                </div>
+                                <div class="col-6 score">
+                                    <span id="finalScore"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
                         <button type="button" class="btn menu-button button-click"
-                            onclick="window.location.href=window.location.href;" data-dismiss="modal">
-                            start</button>
-                    </li>
-                    <li>
+                            onclick="window.location.href=window.location.href;">
+                            Play again</button>
                         <button type="button" class="btn exit-button button-click"
-                            onclick="window.location.href='index.html';" data-dismiss="modal">Exit back to home screen</button>
-                    </li>
-                </ul>
+                            onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Lost Modal -->
+        <div class="modal fade" id="gameLostModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content mainMenu">
+                    <div class="modal-header d-block">
+                        <h3 class="modal-title text-center gold-text">Out of time I'm afraid!</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="game-lost container justify-content-center text-center">
+                            <p>Looks like you've had one too many already! Times up I'm afraid,
+                                you just weren't quick enough....
+                            </p>
+                            <p>Better luck next time.
+                            </p>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn menu-button button-click"
+                                onclick="window.location.href=window.location.href;">
+                                Play again</button>
+                            <button type="button" class="btn exit-button button-click"
+                                onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="container-fluid game-container">
-    <div class="container-fluid d-flex no-gutters" id="quiz-board">
-        <div class="row question-row">
-            <div class="col-3 q&a number">
-                <span id= "question-number">1.</span>
-            </div>
-            <div class="col-9 q&a question">
-                <span id= "question">TEST QUESTION CONTENT</span>
-            </div>
-        </div>
-        <div class="row answer-row">
-            <div class="col-3 answer1">ANSWER 1</div>
-            <div class="col-3 answer2">ANSWER 2</div>
-            <div class="col-3 answer3">ANSWER 3</div>
-        </div>
-    </div>
-</div>
-
+    
 {% endblock %}
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

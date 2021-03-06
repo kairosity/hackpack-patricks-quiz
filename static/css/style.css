@@ -145,6 +145,38 @@ h4.flashmsg {
     color: #f2f2f2;
 }
 
+#battle_name {
+    margin: 15px;
+}
+
+#battle-label {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 33px;
+    color: white;
+    box-shadow: 0px 5px 0px #46a637;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-index {
+    margin: 15px;
+}
+
+.btn-patrick {
+    box-shadow: 5px 5px 5px black;
+    background-color:#46a637;
+    color: white;   
+}
+
+.btn-index:hover, 
+.btn-patrick:hover {
+    box-shadow: 7px 7px 7px black;  
+    background-color:#37852b; 
+    color: white; 
+}
+
 /* Responsive content */
 
 @media(max-width: 900px) {
