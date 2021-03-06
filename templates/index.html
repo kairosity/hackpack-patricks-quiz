@@ -24,14 +24,10 @@
     {% if session["user"] %}
     <div class="row home-button-section">
         <div class="col-12 col-md-6 d-flex justify-content-center">
-            <div class="home-button">
-                <a href="{{url_for('create_battle')}}">Create a Battle!</a>
-            </div>
+                <a href="{{url_for('create_battle')}}" type="button" class="home-button">Create a Battle!</a>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-center">
-            <div class="home-button">
-                <a href="{{url_for('join_battle')}}">Join a Battle</a>
-            </div>
+                <a href="{{url_for('join_battle')}}" type="button" class="home-button">Join a Battle</a>
         </div>
     </div>
 </section>
@@ -41,14 +37,14 @@
 
 {% else %}
 
-    <section class="container-fluid">
-        <div class="row">
-        <div class="col-12 center">
-            <a href="{{url_for('login')}}" id="login-button" class="btn btn-index btn-patrick" type="button">Login</a>      
-            <a href="{{url_for('register')}}" id="register-button" class="btn btn-index btn-patrick" type="button">Register</a>
-        </div>   
-        </div>  
-    </section>
+    <div class="row home-button-section">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <a href="{{url_for('login')}}" type="button" class="home-button">Login</a>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <a href="{{url_for('register')}}" type="button" class="home-button">Register</a>
+        </div>
+    </div>
 
 {% endif %}
 
