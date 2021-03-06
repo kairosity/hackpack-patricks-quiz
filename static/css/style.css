@@ -1,24 +1,126 @@
-/*---------------------------------------------------------------------- Body */
-
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap');
 
-
 /* font-family: 'Berkshire Swash', cursive; ===> Header / Footer / titles
-font-family: 'Libre Baskerville', serif;    ===> Nav menu
-font-family: 'Pacifico', cursive;     ===> Text         */ 
+font-family: 'Libre Baskerville', serif;    ===> Nav menu / Text
+font-family: 'Pacifico', cursive;     ===>          */ 
 
-/*---------------------------------------------------------------------- Header */
+/*---------------------------------------------------------------------- Common style */
 
 /* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
 body { 
-    padding-top: 136px; 
+    padding-top: 136px;
 }
+/*Credit for the background image : https://www.freepik.com/vectors/celebration' 
+Celebration vector created by freepik - www.freepik.com */
+
+.home-section,
+.background-style {
+    min-height: 100vh;
+    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.home-section::before,
+.background-style::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1b1b1bcc;
+}
+/* ---------------------------------- H1 */
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #f2f2f2;
+    font-size: 60px;
+    margin: 40px 5px;
+    /* padding-top: 3rem; */
+}
+/* ---------------------------------- forms */
+
+label {
+    font-family: 'Pacifico', cursive;
+    color: #f2f2f2;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------- Button */
+
+.button-section {
+    margin: 33px 0;
+    text-align: center;
+}
+
+.button-style {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 33px;
+    letter-spacing: 3px;
+    border: 6px outset #8c512e;
+    background-color: #f2ae2e;
+    margin-bottom: 20px;
+    padding: 12px;
+    width: 60%;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    color: white;
+}
+
+.button-style:hover {
+    box-shadow: 0px 0px 20px gold;
+    transition: box-shadow 0.4s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive content */
+
+@media(max-width: 1260px) {
+    .button-style {
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 992px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .button-style {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .button-style {
+        width: auto;
+    }
+}
+
+@media(max-width: 345px) {
+    .button-style {
+        padding: 6px;
+    }
+}
+/*---------------------------------------------------------------------- Header */
+
 /* Logo */
 
 .logo {
     margin: 10px 0 10px 10px;
 }
-
 .title {
     font-family: 'Berkshire Swash', cursive;
     color: #f2f2f2;
@@ -26,37 +128,11 @@ body {
     text-align: left;
 }
 
+
 /* -------------------------------- Navigation menu */
 
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Libre Baskerville', serif;
-    font-size: 20px;
-    color: #f2f2f2;
-    text-decoration: none;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #f2ae2e;
-}
-
-.navbar-dark .navbar-nav .nav-link .active-page {
-    color: #f2ae2e;
-}
-
-/* Flash Messages */
-
-h4.flashmsg {
-    line-height: 3;
-    color:white;
-    margin: 0 auto;
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 1.6rem;
-
-    
-}
-.flashes{
-    background-color: green;
-    justify-content: center;
 }
 
 /* Responsive header */
@@ -74,56 +150,17 @@ h4.flashmsg {
 }
 
 @media(max-width: 375px) {
-    .navbar {
-        padding: 8px;
-    }
-    .logo {
-        margin: 3px 0 3px 3px;
-    }
-
-    .logo img {
-        height: 70px;
-        width: 70px;
-    }
-
-    .title {
-        font-size: 18px;
+    body { 
+        padding-top: 102px;
     }
 }
 
-
-/*---------------------------------------------------------------------- Section */
-/*Credit for the background image : https://www.freepik.com/vectors/celebration' Celebration vector created by freepik - www.freepik.com */
-.home-section {
-    height: 100vh;
-    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-.home-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #1b1b1bcc;
-}
+/*---------------------------------------------------------------------- Home-Section */
 
 .home-text {
     text-align: center;
     margin: 0 20px 20px;
 }
-
-.home-text h1 {
-    font-family: 'Berkshire Swash', cursive;
-    color: #f2f2f2;
-    font-size: 60px;
-    margin: 40px;
-    padding-top: 3rem;
-}
-
 .home-text p {
     font-family: 'Libre Baskerville', serif;
     color: #f2f2f2;
@@ -131,86 +168,43 @@ h4.flashmsg {
     line-height: 36px;
     letter-spacing: 2px;
 }
-
-.home-button-section {
-    margin: 50px;
-    text-align: center;
-}
-
-.home-button {
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 33px;
-    letter-spacing: 3px;
-    border: 6px outset #8c512e;
-    background-color: #f2ae2e;
-    margin: 30px;
-    padding: 12px;
-    width: 60%;
-    -webkit-user-select: none; 
-    -khtml-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none; 
-    color: white;
-}
-
-.home-button:hover {
-    box-shadow: 0px 0px 20px gold;
-    transition: box-shadow 0.4s ease-in-out;
-    text-decoration: none;
-    color: white;
-}
-
 #battle_name {
     margin: 15px;
 }
-
 #battle-label {
     font-family: 'Berkshire Swash', cursive;
     font-size: 33px;
     color: white;
     box-shadow: 0px 5px 0px #46a637;
 }
-
 .center {
     text-align: center;
 }
-
 .btn-index {
     margin: 15px;
 }
-
+.btn-patrick {
+    box-shadow: 5px 5px 5px black;
+    background-color:#46a637;
+    color: white;   
+}
 .btn-index:hover, 
 .btn-patrick:hover {
     box-shadow: 7px 7px 7px black;  
     background-color:#37852b; 
     color: white; 
 }
-
-.welcomeMenu {
-    font-family: 'Berkshire Swash', cursive;
-    background: #46a637;
-    color: white;
-}
-
-/* Responsive content */
-
-@media(max-width: 900px) {
-    .home-button {
-        font-size: 16px;
+/* Responsive home-content */
+@media(max-width: 768px) {
+    .home-text {
+        margin: 0;
     }
-
-    .home-text h1 {
-        font-size: 30px;
-    }
-
     .home-text p {
-        font-size: 12px;
+        font-size: 14px;
+        line-height: 20px;
     }
 }
-
 /*---------------------------------------------------------------------- Footer */
-
 footer {
     background-color: #1b1b1b;
     position: fixed;
@@ -219,13 +213,11 @@ footer {
     width: 100%;
     overflow: hidden;
 }
-
 .social-links, .social-links ul, .copyright {
     padding: 0;
     margin: 0;
     text-align: center;
 }
-
 .copyright,.social-links a {
     color: #f2f2f2;
     font-family: 'Berkshire Swash', cursive;
@@ -233,23 +225,19 @@ footer {
     line-height: 33px;
     vertical-align: center;
 }
-
 .social-links a {
     margin: 0 6px;
 }
-
 .social-links a:hover {
     color: #f2ae2e;
 }
-
 /* responsive footer */
-
 @media(max-width: 425px) {
     .copyright,.social-links a {
         font-size: 14px;
     }
-
     .social-links a {
         margin: 0 3px;
     }    
 }
+/*---------------------------------------------------------------------- Registration */
