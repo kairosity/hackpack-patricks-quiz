@@ -4,13 +4,13 @@ let startTime = '1m : 00s'; //Used for display only, cn probably be replaced in 
 let round1Score = 0; //store result from round
 let round2Score = 0; //store result from round
 let round3Score = 0; //store result from round
-let time = 60000; //estimated starting time of 60s for 10 questions. may be too long
+let time = 6000; //estimated starting time of 60s for 10 questions. may be too long
 let roundQuestionNumber = 0;
 
 let questionBlock = document.querySelector("#question")  //CS --> On line 70 you are telling the pc to append "question" to questionBlock but you didn't define it so here it is.
 
 $(window).on('load', function () {
-    $('#welcomeModal').modal('show'); //Triggers welcome modal on page load
+    $('#welcomeModal').modal({backdrop: 'static', keyboard: false}); //Triggers welcome modal on page load
     $("#timer").html(startTime); //sets start time display before timer() function is called
 });
 
@@ -103,14 +103,14 @@ function scoreAnswer(answerSelected) {
             roundQuestionNumber++;
             score++;
             $("#score").html(score); //updates score display html
-            $("#out-of").html("/" + roundQuestionNumber); //updates out-of display html
+            $("#out-of").html(roundQuestionNumber); //updates out-of display html
         } else if (selectedItem === answerSelected.answer && roundQuestionNumber == 9) {
             e.setAttribute("style", "background-color: green");
             setTimeout(function () {
             }, 500);
             score++;
             $("#score").html(score); //updates score display html
-            $("#out-of").html("/" + roundQuestionNumber); //updates out-of display html
+            $("#out-of").html(roundQuestionNumber); //updates out-of display html
             round++;
             gameStatus();
             roundQuestionNumber = 0;
@@ -121,13 +121,13 @@ function scoreAnswer(answerSelected) {
             }, 500);
             roundQuestionNumber++;
             $("#score").html(score); //updates score display html
-            $("#out-of").html("/" + roundQuestionNumber); //updates out-of display html
+            $("#out-of").html(roundQuestionNumber); //updates out-of display html
         } else if (selectedItem !== answerSelected.answer && roundQuestionNumber == 9) {
             e.setAttribute("style", "background-color: red");
             setTimeout(function () {
             }, 500);
             $("#score").html(score); //updates score display html
-            $("#out-of").html("/" + roundQuestionNumber); //updates out-of display html
+            $("#out-of").html(roundQuestionNumber); //updates out-of display html
             round++;
             gameStatus();
             roundQuestionNumber = 0;

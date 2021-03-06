@@ -1,12 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container-fluid leaderboard-container justify-content-center row">
+
+    <div class="leaderboard-scores">
+
+         <h1 class="leaderboard-heading col-12">"{{battle.battle_name|capitalize}}" Battle's Leaderboard</h1>
+        
+         <div class="col-6 offset-md-3">
+
+    
+        {% for score in battle.battle_scores %}
+            <h3 class="scores">Player Name:{{score[0]}}</h3><h3>Score: {{score[1]}}</h3>
+        {% endfor %}
 
 
-{% for score in battle.battle_scores %}
-    <h3>Player Name:{{score[0]}}</h3>
-    <h3>Score: {{score[1]}}</h3>
-{% endfor %}
-
+      </div>
+    </div>  
+</div>
 
 {% endblock %}

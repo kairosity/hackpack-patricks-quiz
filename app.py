@@ -59,8 +59,11 @@ def register():
         mongo.db.users.insert_one(register_user)
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration successful Welcome to the pub quiz!")
         username = session["user"]
+        flash(f"Registration successful Welcome to the pub quiz {username} !")
+        username = session["user"]
+
+        return redirect(url_for("home"))
 
     return render_template("registration.html")
 
@@ -125,14 +128,14 @@ def rand_num():
 
 @app.route("/create_battle", methods=["GET", "POST"])
 def create_battle():
+    if session:
+        if "user" in session:
+            username = session["user"]
+            user = mongo.db.users.find_one({"username": username})
+            user_id = user["_id"]
 
-    if request.method == "POST":
-        if session:
-            if "user" in session:
-                username = session["user"]
-                user = mongo.db.users.find_one({"username": username})
-                user_id = user["_id"]
-
+            if request.method == "POST":
+        
                 #need a way to make sure that the battle pin has not been generated already.
                 # While existing battle pin run the function?  
 
@@ -156,17 +159,23 @@ def create_battle():
                 register_battle = {
                 "battle_name": battle_name,
                 "players": [user_id],
-                "battle_pin": battle_pin,
-                "battle_scores": []
+                "battle_pin": battle_pin
                 }
 
                 mongo.db.battles.insert_one(register_battle)
 
                 flash(f"Your {battle_name} battle has been created! Welcome to the quiz! Your battle pin is {battle_pin}, share this with your competitors to battle it out!")
                 username = session["user"]
-                return redirect(url_for('battleground', battle_pin=battle_pin))
+                return redirect(url_for('battleground', battle_pin=battle_pin, username=username))
 
-    return render_template("create_battle.html")
+            return render_template("create_battle.html", username=username)
+
+        else:
+            flash("You must be logged in to create a battle!")
+            return redirect(url_for('login'))
+    else:
+        flash("You must be logged in to create a battle!")
+        return redirect(url_for('login'))
 
 
 @app.route("/join-battle", methods=["GET", "POST"])
@@ -180,7 +189,6 @@ def join_battle():
 
                 battle = mongo.db.battles.find_one({"battle_pin": inserted_pin})
 
-                print("got here")
                 if battle is not None:
 
                     user_name = session["user"]
@@ -212,15 +220,12 @@ def join_battle():
         return redirect(url_for('login'))
 
 
-
 @app.route("/battleground/<battle_pin>/<username>", methods=["GET", "POST"])
 def battleground(battle_pin, username):
 
     if request.method == "POST":
-        # player_score = request.form.get("score")
-        print("posted")
-        player_score = "23"
-
+        player_score = request.form.get("score")
+    
         # Add this player's score into the array of battle_scores
 
         mongo.db.battles.update_one({"battle_pin": int(battle_pin)},
@@ -231,7 +236,6 @@ def battleground(battle_pin, username):
         battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
         battle_scores = battle["battle_scores"]
 
-        print(battle_scores)
 
         # Send the updated battle_pin to the leaderboard for display
         # the battle pin will contain the updated scores via the battle obj.
@@ -255,7 +259,12 @@ def leaderboard(battle_pin):
     # find the updated battle scores array and sanitize it for displaying. 
 
     battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
-    print(battle)
+
+    battle_scores = battle["battle_scores"]
+
+    battle_scores.sort(key=lambda x: x[1], reverse=True)
+
+    print(battle_scores)
 
     return render_template('leaderboard.html', battle=battle)
 
