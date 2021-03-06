@@ -9,7 +9,7 @@ font-family: 'Pacifico', cursive;     ===>          */
 
 /* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
 body { 
-    margin-top: 136px;
+    margin-top: 136px !important;
 }
 
 
