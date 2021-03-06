@@ -1,6 +1,6 @@
 let round = 1;
 let score = 0; //score will be used in display 0/10 and to track result
-let startTime = '1m : 00s'; //Used for display only, cn probably be replaced in HTML
+let startTime = '1m : 00s'; //Used for display only, cn probably be replaced in HTML        CS -> The user has 1 minute to answer the question right? I think it's easier to make it 60seconds 
 let Round1Score = 0; //store result from round
 let Round2Score = 0; //store result from round
 let Round3Score = 0; //store result from round

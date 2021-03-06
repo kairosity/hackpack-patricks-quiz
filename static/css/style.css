@@ -235,12 +235,6 @@ h4.flashmsg {
     margin: 15px;
 }
 
-.btn-patrick {
-    box-shadow: 5px 5px 5px black;
-    background-color:#46a637;
-    color: white;   
-}
-
 .btn-index:hover, 
 .btn-patrick:hover {
     box-shadow: 7px 7px 7px black;  
@@ -248,7 +242,17 @@ h4.flashmsg {
     color: white; 
 }
 
+<<<<<<< HEAD
 /* Responsive home-content */
+=======
+.welcomeMenu {
+    font-family: 'Berkshire Swash', cursive;
+    background:#46a637;
+    color: white;
+}
+
+/* Responsive content */
+>>>>>>> 999ba4b (battleground modal working and styled)
 
 @media(max-width: 768px) {
     .home-text {
