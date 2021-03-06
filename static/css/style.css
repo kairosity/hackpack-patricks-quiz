@@ -10,6 +10,10 @@ font-family: 'Pacifico', cursive;     ===>          */
 body { 
     padding-top: 136px;
 }
+
+.container-fluid {
+    padding: 0;
+}
 /*Credit for the background image : https://www.freepik.com/vectors/celebration' 
 Celebration vector created by freepik - www.freepik.com */
 
@@ -130,12 +134,33 @@ label {
 
 
 /* -------------------------------- Navigation menu */
-
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    color: #f2f2f2;
+    text-decoration: none;
 }
-
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #f2ae2e;
+}
+.navbar-dark .navbar-nav .nav-link .active-page {
+    color: #f2ae2e;
+}
+/* Flash Messages */
+h4.flashmsg {
+    line-height: 3;
+    color:white;
+    margin: 0 auto;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.6rem;
+    
+}
+.flashes{
+    background-color: green;
+    justify-content: center;
+}
 /* Responsive header */
+
 
 @media(max-width: 1200px) {
     .navbar-dark .navbar-nav .nav-link {
@@ -147,13 +172,27 @@ label {
     .navbar-dark .navbar-nav .nav-link {
         font-size: 12px;
     }
-}
 
-@media(max-width: 375px) {
-    body { 
+     body { 
         padding-top: 102px;
     }
+    .navbar {
+        padding: 8px;
+    }
+    .logo {
+        margin: 3px 0 3px 3px;
+    }
+    .logo img {
+        height: 70px;
+        width: 70px;
+    }
+    .title {
+        font-size: 18px;
+    }
 }
+
+/* Responsive header */
+
 
 /*---------------------------------------------------------------------- Home-Section */
 
@@ -202,7 +241,6 @@ label {
     margin: 15px;
 }
 
-}
 /* Responsive home-content */
 @media(max-width: 768px) {
     .home-text {
@@ -219,8 +257,6 @@ footer {
     position: fixed;
     bottom: 0;
     height: 33px;
-    width: 100%;
-    overflow: hidden;
 }
 .social-links, .social-links ul, .copyright {
     padding: 0;
