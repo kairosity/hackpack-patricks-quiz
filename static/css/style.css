@@ -145,7 +145,7 @@ h4.flashmsg {
     text-align: center;
 }
 
-.home-button {
+.button-style {
     font-family: 'Berkshire Swash', cursive;
     font-size: 33px;
     letter-spacing: 3px;
@@ -162,7 +162,7 @@ h4.flashmsg {
     color: white;
 }
 
-.home-button:hover {
+.button-style:hover {
     box-shadow: 0px 0px 20px gold;
     transition: box-shadow 0.4s ease-in-out;
     text-decoration: none;
