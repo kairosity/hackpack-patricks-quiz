@@ -2,14 +2,10 @@
 
 {% block content %}
 
-<h2>{{battle}}</h2>
 
 {% for score in battle.battle_scores %}
-    <h3>{{score}}</h3>
-{% endfor %}
-
-{% for player in battle.players %}
-    <h3>{{player}}</h3>
+    <h3>Player Name:{{score[0]}}</h3>
+    <h3>Score: {{score[1]}}</h3>
 {% endfor %}
 
 
