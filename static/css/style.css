@@ -221,23 +221,6 @@ h4.flashmsg {
     box-shadow: 0px 5px 0px #46a637;
 }
 
-.answersList {
-    font-family: theSimpsons;
-    list-style-type: none;
-    font-size: 1.5rem;
-    text-align: center;
-    height: 3rem;
-    line-height: 3rem;
-    margin: 10px auto;
-    width: 75%;
-    border: 2px solid #f05a2b;
-    border-radius: 25px;
-    -webkit-user-select: none;        
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-    user-select: none;
-}
-
 .center {
     text-align: center;
 }
@@ -323,6 +306,7 @@ footer {
     }
 }
 
+<<<<<<< HEAD
 
 /* Leaderboard */
 
@@ -336,4 +320,72 @@ footer {
 .leaderboard-heading{
     margin-top: 0;
     padding-top: 3rem;
+=======
+/*----------------------------------------------------------------------Battleground */
+
+.battle-modal {
+    color: #f2f2f2;
+    font-family: 'Berkshire Swash', cursive;
+    background: #46a637;
+    border: 6px outset #8c512e;
+}
+
+.info-row {
+    color: white;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.stats {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+.stats p {
+    margin: 10px;
+}
+
+#timer {
+    margin-left: 10px;
+}
+
+
+.answersList {
+    background: #337928;
+    font-family: 'Berkshire Swash', cursive;
+    list-style-type: none;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 10px auto;
+    width: 50%;
+    border: 2px solid #f05a2b;
+    border-radius: 25px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    margin-bottom: 40px;
+}
+
+.answersList:hover {
+    box-shadow: 0px 0px 20px gold;
+}
+
+#questionText {
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
+    color: white;
+    margin-top: 20px;
+
+}
+
+.game-row {
+    background:#e7b556;
+    margin-right: 20%;
+    margin-left: 20%;
+    border: 3px solid black;
+    box-shadow: 0px 0px 20px gold;
+>>>>>>> 17e4bb3 (styling battleground)
 }
