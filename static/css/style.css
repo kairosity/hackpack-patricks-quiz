@@ -134,12 +134,11 @@ h4.flashmsg {
     font-family: 'Berkshire Swash', cursive;
     font-size: 33px;
     letter-spacing: 3px;
-    text-align: center;
     border: 6px outset #8c512e;
     background-color: #f2ae2e;
     margin: 30px;
     padding: 12px;
-    /* width: 60%; */
+    width: 60%;
 }
 
 .home-button a {
