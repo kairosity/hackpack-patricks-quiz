@@ -225,10 +225,7 @@ def battleground(battle_pin, username):
 
     if request.method == "POST":
         player_score = request.form.get("score")
-
-        print(player_score)
-        # player_score = "23"
-
+    
         # Add this player's score into the array of battle_scores
 
         mongo.db.battles.update_one({"battle_pin": int(battle_pin)},
@@ -262,6 +259,12 @@ def leaderboard(battle_pin):
     # find the updated battle scores array and sanitize it for displaying. 
 
     battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
+
+    battle_scores = battle["battle_scores"]
+
+    battle_scores.sort(key=lambda x: x[1])
+
+    print(battle_scores)
 
     return render_template('leaderboard.html', battle=battle)
 
