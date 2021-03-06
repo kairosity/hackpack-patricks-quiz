@@ -14,6 +14,10 @@ body {
 .container-fluid {
     padding: 0;
 }
+
+.row {
+    margin: 0;
+}
 /*Credit for the background image : https://www.freepik.com/vectors/celebration' 
 Celebration vector created by freepik - www.freepik.com */
 
@@ -285,4 +289,22 @@ footer {
         margin: 0 3px;
     }    
 }
-/*---------------------------------------------------------------------- Registration */
+/*---------------------------------------------------------------------- Login */
+
+.login-section {
+    margin-bottom: 33px;
+}
+
+.login-section h1 {
+    text-align: center;
+    font-size: 40px;
+}
+.login-button {
+    text-align: center;
+}
+
+.login-button .button-style {
+    margin-top: 30px;
+    width: auto;
+    font-size: 22px;
+}
