@@ -165,6 +165,23 @@ h4.flashmsg {
     box-shadow: 0px 5px 0px #46a637;
 }
 
+.answersList {
+    font-family: theSimpsons;
+    list-style-type: none;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 10px auto;
+    width: 75%;
+    border: 2px solid #f05a2b;
+    border-radius: 25px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
 .center {
     text-align: center;
 }
