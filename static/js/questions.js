@@ -2,159 +2,159 @@
 // CS --> Added One, Two and Three to the questions to make sure that if we change the round it is retrieving the correct array
 const roundOneQuestions = [
     {
-        question: "1QOne",
-        options: ["1A", "1B", "1C"],
-        answer: "1B"
+        question: "Who is St. Patrick?",
+        options: ["The Irish Prime Minister", "Ireland's most famous patron saint", "Ireland's most famous priest"],
+        answer: "Ireland's most famous patron saint"
     },
     {
-        question: "2QOne",
-        options: ["2A", "2B", "2C"],
-        answer: "2C"
+        question: "According to legend what animal did St.Patrick rid Ireland of?",
+        options: ["Cows", "Dogs", "Snakes"],
+        answer: "Snakes"
     },
     {
-        question: "3QOne",
-        options: ["3A", "3B", "3C"],
-        answer: "3B"
+        question: "What is celebrated on March 17th?",
+        options: ["St. Patrick's Day", "Easter", "Christmas"],
+        answer: "St. Patrick's Day"
     },
     {
-        question: "4QOne",
-        options: ["4A", "4B", "4C"],
-        answer: "4A"
+        question: "When was St. Patrick's day celebrated for the first time?",
+        options: ["1902", "1903", "1904"],
+        answer: "1903"
     },
     {
-        question: "5QOne",
-        options: ["5A", "5B", "5C"],
-        answer: "5A"
+        question: "What is St. Patrick's nationality?",
+        options: ["British", "Dutch", "Irish"],
+        answer: "British"
     },
     {
-        question: "6QOne",
-        options: ["6A", "6B", "6C"],
-        answer: "6B"
+        question: "What is St. Patrick's real name?",
+        options: ["Conor", "Maewyn", "Finn"],
+        answer: "Maewyn"
     },
     {
-        question: "7QOne",
-        options: ["7A", "7B", "7C"],
-        answer: "7C"
+        question: "What color is used to represent's St. Patrick's day?",
+        options: ["Green", "Blue", "Orange"],
+        answer: "Green"
     },
     {
-        question: "8QOne",
-        options: ["8A", "8B", "8C"],
-        answer: "8C"
+        question: "To which religion were the Irish converted by St. Patrick?",
+        options: ["Islam", "Christianity", "Paganism"],
+        answer: "Christianity"
     },
     {
-        question: "9QOne",
-        options: ["9A", "9B", "9C"],
-        answer: "9B"
+        question: "What is St. Patrick's classic dish?",
+        options: ["Corned beef and Cabbage", "Irish Seafood Chowder", "Colcannon"],
+        answer: "Corned beef and Cabbage"
     },
     {
-        question: "10QOne",
-        options: ["10A", "11B", "10C"],
-        answer: "10A"
+        question: "How was St. Patrick brought to Ireland?",
+        options: ["As a farmer", "As a priest", "As a slave"],
+        answer: "As a slave"
     },
 ];
 
 const roundTwoQuestions = [
     {
-        question: "1QTwo",
-        options: ["1A", "1B", "1C"],
-        answer: "1B"
+        question: "St. Patrick is Irish.",
+        options: ["True", "False"],
+        answer: "False"
     },
     {
-        question: "2QTwo",
-        options: ["2A", "2B", "2C"],
-        answer: "2C"
+        question: "Guinness is traditionally associated with St. Patrick's day.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "3QTwo",
-        options: ["3A", "3B", "3C"],
-        answer: "3B"
+        question: "St. Patrick preferred blue over green.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "4QTwo",
-        options: ["4A", "4B", "4C"],
-        answer: "4A"
+        question: "St. Patrick used a shamrock to explain the Holy Trinity.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "5QTwo",
-        options: ["5A", "5B", "5C"],
-        answer: "5A"
+        question: "Corned beef and cabbage is St. Patrick's classic dish.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "6QTwo",
-        options: ["6A", "6B", "6C"],
-        answer: "6B"
+        question: "St. Patrick got rid of all the cows in Ireland.",
+        options: ["True", "False"],
+        answer: "False"
     },
     {
-        question: "7QTwo",
-        options: ["7A", "7B", "7C"],
-        answer: "7C"
+        question: "St. Patrick's day is also referred as St. Paddy's day.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "8QTwo",
-        options: ["8A", "8B", "8C"],
-        answer: "8C"
+        question: "Maewyn is St. Patrick's real name.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "9QTwo",
-        options: ["9A", "9B", "9C"],
-        answer: "9B"
+        question: "St. Patrick is not the patron saint of Ireland.",
+        options: ["True", "False"],
+        answer: "False"
     },
     {
-        question: "10QTwo",
-        options: ["10A", "11B", "10C"],
-        answer: "10A"
+        question: "Pubs have always been allowed to open on St. Patrick's day.",
+        options: ["True", "False"],
+        answer: "False"
     },
 ];
 
 const roundThreeQuestions = [
     {
-        question: "1QThree",
-        options: ["1A", "1B", "1C"],
-        answer: "1B"
+        question: "What is Ireland's biggest lake?",
+        options: ["Lough Derg", "Lough Neagh", "Lough Corrib"],
+        answer: "Lough Neagh"
     },
     {
-        question: "2QThree",
-        options: ["2A", "2B", "2C"],
-        answer: "2C"
+        question: "Which of these counties has the biggest population?",
+        options: ["Cork", "Limerick", "Galway"],
+        answer: "Cork"
     },
     {
-        question: "3QThree",
-        options: ["3A", "3B", "3C"],
-        answer: "3B"
+        question: "Which county is nicknamed The Treaty County?",
+        options: ["Carlow", "Waterford", "Limerick"],
+        answer: "Limerick"
     },
     {
-        question: "4QThree",
-        options: ["4A", "4B", "4C"],
-        answer: "4A"
+        question: "What is Ireland's longest river?",
+        options: ["River Shannon", "Grand Canal", "River Barrow"],
+        answer: "River Shannon"
     },
     {
-        question: "5QThree",
-        options: ["5A", "5B", "5C"],
-        answer: "5A"
+        question: "In terms of match attendance, what is the most popular sport in Ireland?",
+        options: ["American Football", "Gaelic Football", "Soccer"],
+        answer: "Gaelic Football"
     },
     {
-        question: "6QThree",
-        options: ["6A", "6B", "6C"],
-        answer: "6B"
+        question: "In what language is the Book of Kells written?",
+        options: ["English", "Gaelic", "Latin"],
+        answer: "Latin"
     },
     {
-        question: "7QThree",
-        options: ["7A", "7B", "7C"],
-        answer: "7C"
+        question: "What is the capital of Ireland?",
+        options: ["Lucan", "Dublin", "Cork"],
+        answer: "Dublin"
     },
     {
-        question: "8QThree",
-        options: ["8A", "8B", "8C"],
-        answer: "8C"
+        question: "Being drunk in public in Ireland is an offence.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "9QThree",
-        options: ["9A", "9B", "9C"],
-        answer: "9B"
+        question: "There are more Irish living in Ireland than in other countries.",
+        options: ["True", "False"],
+        answer: "True"
     },
     {
-        question: "10QThree",
-        options: ["10A", "11B", "10C"],
-        answer: "10A"
+        question: "Gay marriage is legal in Ireland.",
+        options: ["True", "False"],
+        answer: "True"
     },
 ];

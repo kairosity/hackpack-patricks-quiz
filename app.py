@@ -135,10 +135,9 @@ def create_battle():
             user_id = user["_id"]
 
             if request.method == "POST":
-        
+
                 #need a way to make sure that the battle pin has not been generated already.
                 # While existing battle pin run the function?  
-
 
                 existing_battle = mongo.db.battles.find_one(
                             {"battle_name": request.form.get("battle_name").lower()})
@@ -224,14 +223,16 @@ def join_battle():
 def battleground(battle_pin, username):
 
     if request.method == "POST":
-        player_score = request.form.get("score")
-    
+        player_score = int(request.form.get("score-to-pass"))
+
+        print("Got here")
+        print(player_score)
         # Add this player's score into the array of battle_scores
 
         mongo.db.battles.update_one({"battle_pin": int(battle_pin)},
                                     {'$push':
                                     {"battle_scores":
-                                     [username, int(player_score)]}})
+                                     [username, player_score]}})
  
         battle = mongo.db.battles.find_one({"battle_pin": int(battle_pin)})
         battle_scores = battle["battle_scores"]
