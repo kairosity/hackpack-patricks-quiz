@@ -21,8 +21,19 @@ mongo = PyMongo(app)
 users = mongo.db.users.find()
 
 @app.route("/")
-@app.route("/home")
+@app.route("/home", methods=["GET", "POST"])
 def home():
+
+    if request.method == "POST":
+
+        battle_pin = int(request.form.get('battle_pin'))
+
+        print(battle_pin)
+
+        # battle = mongo.db.battles.find_one({"battle_pin": battle_pin})
+
+        return redirect(url_for('leaderboard', battle_pin=battle_pin))
+
     return render_template("index.html", users=users)
 
 @app.route("/register", methods=["GET", "POST"])
@@ -225,8 +236,6 @@ def battleground(battle_pin, username):
     if request.method == "POST":
         player_score = int(request.form.get("score-to-pass"))
 
-        print("Got here")
-        print(player_score)
         # Add this player's score into the array of battle_scores
 
         mongo.db.battles.update_one({"battle_pin": int(battle_pin)},
@@ -264,8 +273,6 @@ def leaderboard(battle_pin):
     battle_scores = battle["battle_scores"]
 
     battle_scores.sort(key=lambda x: x[1], reverse=True)
-
-    print(battle_scores)
 
     return render_template('leaderboard.html', battle=battle)
 

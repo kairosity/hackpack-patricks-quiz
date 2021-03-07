@@ -359,7 +359,6 @@ footer {
     margin-left: 10px;
 }
 
-
 .answersList {
     background: gold;
     font-family: 'Berkshire Swash', cursive;
@@ -408,3 +407,4 @@ footer {
 .hidden-score-input{
     display: none;
 }
+

@@ -11,7 +11,7 @@
 <section class="container-fluid home-section">
     <div class="row home-text">
         <div class="col">
-            <h1>Welcome to Patrick's Quiz!</h1>
+            <h1 class="main-page-headline">Welcome to Patrick's Quiz!</h1>
             <p>
                 Here we celebrate Saint Patrick's Day with together by playing a Pub Quiz! That's right, you can challenge your peers and yourself 
                 in a fun environment and learn about Paddy and his country's culture.<br>
@@ -30,7 +30,25 @@
                 <a href="{{url_for('join_battle')}}" type="button" class="button-style">Join a Battle</a>
         </div>
     </div>
+
+    
+    <div class="row justify-content-center login-section">
+        <form class="login-form col-10 col-md-6 col-lg-4" method="POST" action="{{ url_for('home') }}">
+            <h1 class="">Check your League's Leaderboard Here</h1>
+        <div class="mb-3">
+            <input type="text" class="form-control"  name="battle_pin" aria-describedby="battle_pin">
+        </div>
+        <div class="login-button">
+            <button type="submit" class="btn button-style">Check Leaderboard</button>
+        </div>
+        </form>
+    </div>
+
+
 </section>
+
+
+   
 
     
     
