@@ -355,10 +355,10 @@ footer {
 
 
 .answersList {
-    background: #337928;
+    background: gold;
     font-family: 'Berkshire Swash', cursive;
     list-style-type: none;
-    color: white;
+    color:#343a40;
     font-size: 1.5rem;
     text-align: center;
     height: 3rem;
@@ -394,3 +394,7 @@ footer {
     box-shadow: 0px 0px 20px gold;
 }
 
+.result {
+    margin: 10px;
+    font-size: 2rem;
+}

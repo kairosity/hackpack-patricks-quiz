@@ -40,6 +40,10 @@ document.getElementById("roundThreeStart").onclick = function () {
     questionSelector(round)
     startGame(levelQuestion);
 };
+document.getElementById("restartGame").onclick = function () {
+    questionSelector(round)
+    startGame(roundOneQuestions);
+};
 
 //when the start game button on welcomeModal is clicked it calls game function
 //CS --> Passed the question array and included the questionSelector function so it runs when the button is clicked. That will gives us the "levelQuestion" to pass in startGame                                                                                        
