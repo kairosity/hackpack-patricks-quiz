@@ -168,6 +168,8 @@ function gameStatus() {
         console.log(totalScore);
         $("#total-score").html(totalScore);
         $("#score-to-pass").html(totalScore);
+        $("#score-to-pass").val(totalScore);
+        console.log($("#score-to-pass").val)
         $("#score").html(0); //updates score display html
         $("#out-of").html(0); //updates out-of display html
     }

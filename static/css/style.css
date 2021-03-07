@@ -398,3 +398,7 @@ footer {
     margin: 10px;
     font-size: 2rem;
 }
+
+.hidden-score-input{
+    display: none;
+}
