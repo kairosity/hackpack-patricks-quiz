@@ -9,7 +9,7 @@
 <div class="container-fluid game-container home-section">
     <div class="container-fluid d-block no-gutters" id="quiz-board">
         <div class="row info-row container-fluid">
-            <div class="col-1 stats"></div>    
+            <div class="col-1 stats"></div>
             <div class="col-4 stats timer">
                 <p class="counter">Timer: <span id="timer"></span></p>
             </div>
@@ -19,7 +19,7 @@
             <div class="col-3 stats out-of">
                 <p> Out of: <span id="out-of">0</span></p>
             </div>
-            <div class="col-1 stats"></div> 
+            <div class="col-1 stats"></div>
         </div>
         <div class="row game-row">
             <div class="col-12 question">
@@ -31,7 +31,8 @@
     <!-- Game Modals -->
 
     <!-- welcome Modal -->
-    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal" aria-hidden="true">
+    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="welcomeModal" tabindex="-1"
+        role="dialog" aria-labelledby="welcomeModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content welcomeMenu battle-modal">
                 <div class="modal-header d-block">
@@ -58,26 +59,28 @@
                                 Start
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="button-style" href="{{ url_for('join_battle') }}"
-                                data-dismiss="modal">
-                                Exit
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Round two Modal -->
-    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="roundTwoModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
-        aria-hidden="true">
+    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="roundTwoModal" tabindex="-1"
+        role="dialog" aria-labelledby="welcomeModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content welcomeMenu battle-modal">
                 <div class="modal-header d-block">
                     <h1 class="modal-title text-center">Ready for Round two</h1>
                 </div>
                 <div class="modal-body">
+                    <div class="row no-gutters">
+                        <div class="col-6 score-key">
+                            <span>Round One score:</span>
+                        </div>
+                        <div class="col-6 score">
+                            <span id="round1Score"></span>
+                        </div>
+                    </div>
                     <ul>
                         <li>
                             <p>You have 60 seconds to complete the following 10 questions.</p>
@@ -92,26 +95,28 @@
                                 Start
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="button-style" href="{{ url_for('join_battle') }}"
-                                data-dismiss="modal">
-                                Exit
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Round three Modal -->
-    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="roundThreeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModal"
-        aria-hidden="true">
+    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="roundThreeModal" tabindex="-1"
+        role="dialog" aria-labelledby="welcomeModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content welcomeMenu battle-modal">
                 <div class="modal-header d-block">
                     <h1 class="modal-title text-center">Ready for the final round?</h1>
                 </div>
                 <div class="modal-body">
+                    <div class="row no-gutters">
+                        <div class="col-6 score-key">
+                            <span>Round Two score:</span>
+                        </div>
+                        <div class="col-6 score">
+                            <span id="round2Score"></span>
+                        </div>
+                    </div>
                     <ul>
                         <li>
                             <p>You have 60 seconds to complete the following 10 questions.</p>
@@ -126,21 +131,16 @@
                                 Start
                             </a>
                         </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="home-button" href="{{ url_for('join_battle') }}"
-                                data-dismiss="modal">
-                                Exit
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Game Complete Modal -->
-    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="gameCompleteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade in" data-bs-backdrop="static" data-bs-keyboard="false" id="gameCompleteModal" tabindex="-1"
+        role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content mainMenu battle-modal">
+            <div class="modal-content welcomeMenu battle-modal">
                 <div class="modal-header d-block">
                     <h3 class="modal-title text-center gold-text">You finished the challenge!</h3>
                     <h5 class="modal-title text-center">But how did you do???</h5>
@@ -149,26 +149,10 @@
                     <div class="game-won container">
                         <div class="row no-gutters">
                             <div class="col-6 score-key">
-                                <span>Time remaining:</span>
+                                <span>Total score:</span>
                             </div>
                             <div class="col-6 score">
-                                <span id="finishTime"></span>
-                            </div>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-6 score-key">
-                                <span>Bonus Points:</span>
-                            </div>
-                            <div class="col-6 score">
-                                <span id="bonusPoints"></span>
-                            </div>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-6 score-key">
-                                <span>Final Score:</span>
-                            </div>
-                            <div class="col-6 score">
-                                <span id="finalScore"></span>
+                                <span id="total-score"></span>
                             </div>
                         </div>
                     </div>
@@ -184,7 +168,8 @@
         </div>
     </div>
     <!-- Lost Modal -->
-    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="gameLostModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="gameLostModal" tabindex="-1"
+        role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content mainMenu battle-modal">
                 <div class="modal-header d-block">
@@ -199,10 +184,10 @@
                         </p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn menu-button button-style button-click"
+                        <button type="button" class="btn menu-button button-click"
                             onclick="window.location.href=window.location.href;">
                             Play again</button>
-                        <button type="button" class="btn button-style exit-button button-click"
+                        <button type="button" class="btn exit-button button-click"
                             onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
                     </div>
                 </div>

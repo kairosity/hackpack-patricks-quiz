@@ -5,6 +5,7 @@ let round1Score = 0; //store result from round
 let round2Score = 0; //store result from round
 let round3Score = 0; //store result from round
 let time = 60000; //estimated starting time of 60s for 10 questions. may be too long
+let totalScore = 0;
 let roundQuestionNumber = 0;
 let levelComplete = false;
 
@@ -118,6 +119,7 @@ function scoreAnswer(answerSelected) {
             levelComplete = true;
             gameStatus();
             roundQuestionNumber = 0;
+            score = 0;
         } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 9) {
             e.setAttribute("style", "background-color: red");
             setTimeout(function () {
@@ -136,17 +138,32 @@ function scoreAnswer(answerSelected) {
             levelComplete = true;
             gameStatus();
             roundQuestionNumber = 0;
+            score = 0;
         }
     }
 }
 
 function gameStatus() {
     if (round == 2) {
+        round1Score = score;
         $('#roundTwoModal').modal('show'); //Triggers roundTwoModal
+        $("#round1Score").html(round1Score);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     } else if (round == 3) {
+        round2Score = score;
         $('#roundThreeModal').modal('show'); //Triggers roundTwoModal
+        $("#round2Score").html(round2Score);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     } else {
+        round3Score = score;
         $('#gameCompleteModal').modal('show'); //Triggers gameCompleteModal
+        totalScore = (round1Score + round2Score + round3Score);
+        console.log(totalScore);
+        $("#total-score").html(totalScore);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     }
 }
 
