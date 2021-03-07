@@ -39,6 +39,11 @@ Celebration vector created by freepik - www.freepik.com */
     width: 100%;
     background-color: #1b1b1bcc;
 }
+
+.leaderboard-instructions{
+    color: white;
+    font-family: 'Berkshire Swash', cursive;
+}
 /* ---------------------------------- H1 */
 
 h1 {
@@ -359,7 +364,6 @@ footer {
     margin-left: 10px;
 }
 
-
 .answersList {
     background: gold;
     font-family: 'Berkshire Swash', cursive;
@@ -408,3 +412,4 @@ footer {
 .hidden-score-input{
     display: none;
 }
+
