@@ -55,9 +55,15 @@
                     </ul>
                     <div class="row center">
                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="button-style" id="startGame" data-dismiss="modal">
+                            <a type="button" class="button-style center" id="startGame" data-dismiss="modal">
                                 Start
                             </a>
+                        </div>
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <a type="button" class="button-style center" href="{{ url_for('home') }}">
+                                Back
+                            </a>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -70,12 +76,12 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content welcomeMenu battle-modal">
                 <div class="modal-header d-block">
-                    <h1 class="modal-title text-center">Ready for Round two</h1>
+                    <h1 class="modal-title text-center">Ready? <br> Round Two!</h1>
                 </div>
                 <div class="modal-body">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters result center">
                         <div class="col-6 score-key">
-                            <span>Round One score:</span>
+                            <span>Score:</span>
                         </div>
                         <div class="col-6 score">
                             <span id="round1Score"></span>
@@ -90,7 +96,7 @@
                         </li>
                     </ul>
                     <div class="row center">
-                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                        <div class="col-12 col-md-12 d-flex justify-content-center">
                             <a type="button" class="button-style" id="roundTwoStart" data-dismiss="modal">
                                 Start
                             </a>
@@ -109,12 +115,12 @@
                     <h1 class="modal-title text-center">Ready for the final round?</h1>
                 </div>
                 <div class="modal-body">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters result center">
                         <div class="col-6 score-key">
-                            <span>Round Two score:</span>
+                            <span>Score:</span>
                         </div>
                         <div class="col-6 score">
-                            <span id="round2Score"></span>
+                            <span id="round2core"></span>
                         </div>
                     </div>
                     <ul>
@@ -126,8 +132,8 @@
                         </li>
                     </ul>
                     <div class="row center">
-                        <div class="col-12 col-md-6 d-flex justify-content-center">
-                            <a type="button" class="home-button" id="roundThreeStart" data-dismiss="modal">
+                        <div class="col-12 col-md-12 d-flex justify-content-center">
+                            <a type="button" class="button-style" id="roundThreeStart" data-dismiss="modal">
                                 Start
                             </a>
                         </div>
@@ -160,10 +166,9 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn menu-button button-click"
-                        onclick="window.location.href=window.location.href;">
-                        Play again</button>
-                    <button type="submit" class="btn exit-button button-click">Exit</button>
+                    <a type="submit" method="POST" class="btn menu-button button-style" href="{{ url_for('battleground', battle_pin=battle_pin, battle_name=battle_name, username=username, player=player, battle=battle) }}">
+                        Submit Score
+                    </a>
                 </div>
                  </form>
                  <!-- onclick="window.location.href='index.html';"   data-dismiss="modal" removed from Exit button to make it submit--> 
@@ -187,18 +192,17 @@
                         </p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn menu-button button-click"
-                            onclick="window.location.href=window.location.href;">
-                            Play again</button>
-                        <button type="button" class="btn exit-button button-click"
-                            onclick="window.location.href='index.html';" data-dismiss="modal">Exit</button>
+                        <a type="button" class="button-style center" id="restartGame" data-dismiss="modal">
+                            Play again
+                        </a>
+                        <a type="button" class="button-style center" href="{{ url_for('home') }}">
+                            Exit
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 
 <p>This is just for testing the code logic - ignore it for now </p>
 <p>Battle Pin:{{battle_pin}}</p>
