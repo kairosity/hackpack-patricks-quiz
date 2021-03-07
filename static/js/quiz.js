@@ -93,31 +93,34 @@ function scoreAnswer(answerSelected) {
         let selectedItem = e.textContent;
         roundQuestionNumber++;
 
-        if (selectedItem === answerSelected.answer && roundQuestionNumber < 10) {
-            e.setAttribute("style", "background-color: green");
-            score++;
-            setTimeout(function() {displayQuestions(objectQuestions); }, 500);
-            updateScoreAndOutOf();
-        } else if (selectedItem === answerSelected.answer && roundQuestionNumber == 10) {
-            e.setAttribute("style", "background-color: green");
-            score++;
-            updateScoreAndOutOf();
-            round++;
-            levelComplete = true;
-            gameStatus();
-        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 10) {
-            e.setAttribute("style", "background-color: red");
-            setTimeout(function() {displayQuestions(objectQuestions); }, 500);
-            updateScoreAndOutOf();
-        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber == 10) {
+        if (selectedItem === answerSelected.answer) {
+            if (roundQuestionNumber == 10) {
+                e.setAttribute("style", "background-color: green");
+                score++;
+                updateScoreAndOutOf();
+                round++;
+                levelComplete = true;
+                gameStatus();
+            } else {
+                e.setAttribute("style", "background-color: green");
+                score++;
+                setTimeout(function () { displayQuestions(objectQuestions); }, 500);
+                updateScoreAndOutOf();
+            }
+        } else if (roundQuestionNumber == 10) {
             e.setAttribute("style", "background-color: red");
             updateScoreAndOutOf();
             round++;
             levelComplete = true;
             gameStatus();
+        } else {
+            e.setAttribute("style", "background-color: red");
+            setTimeout(function () { displayQuestions(objectQuestions); }, 500);
+            updateScoreAndOutOf();
         }
     }
 }
+
 
 function gameStatus() {
     if (round == 2) {
