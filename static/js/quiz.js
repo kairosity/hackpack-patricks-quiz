@@ -4,13 +4,15 @@ let startTime = '1m : 00s'; //Used for display only, cn probably be replaced in 
 let round1Score = 0; //store result from round
 let round2Score = 0; //store result from round
 let round3Score = 0; //store result from round
-let time = 6000; //estimated starting time of 60s for 10 questions. may be too long
+let time = 60000; //estimated starting time of 60s for 10 questions. may be too long
+let totalScore = 0;
 let roundQuestionNumber = 0;
+let levelComplete = false;
 
 let questionBlock = document.querySelector("#question")  //CS --> On line 70 you are telling the pc to append "question" to questionBlock but you didn't define it so here it is.
 
 $(window).on('load', function () {
-    $('#welcomeModal').modal({backdrop: 'static', keyboard: false}); //Triggers welcome modal on page load
+    $('#welcomeModal').modal({ backdrop: 'static', keyboard: false }); //Triggers welcome modal on page load
     $("#timer").html(startTime); //sets start time display before timer() function is called
 });
 
@@ -28,15 +30,15 @@ function questionSelector(round) {
 
 document.getElementById("startGame").onclick = function () {
     questionSelector(round)
-    startGame(levelQuestion)
+    startGame(levelQuestion);
 };
 document.getElementById("roundTwoStart").onclick = function () {
     questionSelector(round)
-    startGame(levelQuestion)
+    startGame(levelQuestion);
 };
 document.getElementById("roundThreeStart").onclick = function () {
     questionSelector(round)
-    startGame(levelQuestion)
+    startGame(levelQuestion);
 };
 
 //when the start game button on welcomeModal is clicked it calls game function
@@ -48,8 +50,10 @@ function clearBlock() {
 }
 
 function startGame(questions) {
-    timer(time); //starts timer() countdown from time variable              // CS --> Commented out this function so it doesn't run whiel we are building the quiz. Once it's dow we need to bring it back to life
-    displayQuestions(questions)
+    levelComplete = false;
+    timer(time);
+    displayQuestions(questions);
+
     //Need to trigger first question load in here
 };
 
@@ -112,8 +116,10 @@ function scoreAnswer(answerSelected) {
             $("#score").html(score); //updates score display html
             $("#out-of").html(roundQuestionNumber); //updates out-of display html
             round++;
+            levelComplete = true;
             gameStatus();
             roundQuestionNumber = 0;
+            score = 0;
         } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 9) {
             e.setAttribute("style", "background-color: red");
             setTimeout(function () {
@@ -129,19 +135,35 @@ function scoreAnswer(answerSelected) {
             $("#score").html(score); //updates score display html
             $("#out-of").html(roundQuestionNumber); //updates out-of display html
             round++;
+            levelComplete = true;
             gameStatus();
             roundQuestionNumber = 0;
+            score = 0;
         }
     }
 }
 
 function gameStatus() {
     if (round == 2) {
+        round1Score = score;
         $('#roundTwoModal').modal('show'); //Triggers roundTwoModal
+        $("#round1Score").html(round1Score);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     } else if (round == 3) {
+        round2Score = score;
         $('#roundThreeModal').modal('show'); //Triggers roundTwoModal
+        $("#round2Score").html(round2Score);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     } else {
+        round3Score = score;
         $('#gameCompleteModal').modal('show'); //Triggers gameCompleteModal
+        totalScore = (round1Score + round2Score + round3Score);
+        console.log(totalScore);
+        $("#total-score").html(totalScore);
+        $("#score").html(0); //updates score display html
+        $("#out-of").html(0); //updates out-of display html
     }
 }
 
@@ -150,7 +172,7 @@ Display functions for time and highscores.......
 influenced by stackoverflow: https://stackoverflow.com/questions/23025867/game-timer-javascript
 */
 // Game timer
-function timer() { //time value taken from game setting difficulty
+function timer(time) { //time value taken from game setting difficulty
     time = new Date().getTime() + (time); //sets time countdown
     gameTime = setInterval(function () { //uses interval to refresh display
         let now = new Date().getTime(); //sets current time
@@ -159,7 +181,11 @@ function timer() { //time value taken from game setting difficulty
         let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000); //works out seconds
         timeRemaining = (minutes * 60) + seconds;
         $("#timer").html(minutes + "m : " + seconds + "s "); //updates timer display html
-        if (timeDiff < 1000) { //when timer finishes calls outOfTime()
+        if (levelComplete) {
+            $("#timer").html("Finished");
+            clearInterval(gameTime);
+        }
+        else if (timeDiff < 1000) { //when timer finishes calls outOfTime()
             clearInterval(gameTime);
             $("#timer").html("Time's Up!");
             outOfTime();
