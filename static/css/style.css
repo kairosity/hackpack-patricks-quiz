@@ -17,6 +17,7 @@ body {
 Celebration vector created by freepik - www.freepik.com */
 
 .home-section,
+.info-section,
 .background-style {
     /* min-height: 100vh; */
     background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
@@ -25,6 +26,7 @@ Celebration vector created by freepik - www.freepik.com */
 }
 
 .home-section::before,
+.info-section::before,
 .background-style::before {
     content: "";
     position: absolute;
@@ -43,6 +45,36 @@ h1 {
     font-size: 60px;
     margin: 40px 5px;
     /* padding-top: 3rem; */
+}
+
+/* ---------------------------------- H2 */
+
+h2 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #f2f2f2;
+    font-size: 40px;
+    margin: 40px 5px 15px 5px;
+    /* padding-top: 3rem; */
+}
+
+/* ---------------------------------- H3 */
+
+h3 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #f2f2f2;
+    font-size: 35px;
+    margin: 40px 5px 15px 5px;
+    /* padding-top: 3rem; */
+}
+
+/*------------------------------------ info images */
+
+.patrick-img {
+    width: 40%;
+    height: 7%;
+    float: right;
+    border-radius: 20%;
+    padding: 0 0 20px 20px;
 }
 
 /* ---------------------------------- forms */
@@ -203,12 +235,14 @@ h4.flashmsg {
 
 /*---------------------------------------------------------------------- Home-Section */
 
-.home-text {
+.home-text,
+.info-text {
     text-align: center;
     margin: 0 20px 20px;
 }
 
-.home-text p {
+.home-text p,
+.info-text p {
     font-family: 'Libre Baskerville', serif;
     color: #f2f2f2;
     font-size: 24px;
@@ -251,10 +285,12 @@ h4.flashmsg {
 /* Responsive home-content */
 
 @media(max-width: 768px) {
-    .home-text {
+    .home-text,
+    .info.text {
         margin: 0;
     }
-    .home-text p {
+    .home-text p,
+    .info-text p {
         font-size: 14px;
         line-height: 20px;
     }
