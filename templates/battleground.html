@@ -159,17 +159,16 @@
                                 <span>Total score:</span>
                             </div>
                             <div class="col-6 score">
-                                <input class="hidden-score-input" name="score" id="score-to-pass">
+                                <input type="text" class="hidden-score-input" value="" name="score-to-pass" id="score-to-pass">
                                 <span id="total-score"></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <a type="submit" method="POST" class="btn menu-button button-style"
-                        href="{{ url_for('battleground', battle_pin=battle_pin, battle_name=battle_name, username=username, player=player, battle=battle) }}">
+                    <button type="submit" method="POST" class="btn menu-button button-style">
                         Submit Score
-                    </a>
+                </button>
                 </div>
             </form>
             <!-- onclick="window.location.href='index.html';"   data-dismiss="modal" removed from Exit button to make it submit-->
