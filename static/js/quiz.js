@@ -91,29 +91,26 @@ function scoreAnswer(answerSelected) {
 
     if (e.matches("li")) {
         let selectedItem = e.textContent;
+        roundQuestionNumber++;
 
-        if (selectedItem === answerSelected.answer && roundQuestionNumber < 9) {
+        if (selectedItem === answerSelected.answer && roundQuestionNumber < 10) {
             e.setAttribute("style", "background-color: green");
-            roundQuestionNumber++;
             score++;
             setTimeout(function() {displayQuestions(objectQuestions); }, 500);
             updateScoreAndOutOf();
-        } else if (selectedItem === answerSelected.answer && roundQuestionNumber == 9) {
+        } else if (selectedItem === answerSelected.answer && roundQuestionNumber == 10) {
             e.setAttribute("style", "background-color: green");
-            roundQuestionNumber++;
             score++;
             updateScoreAndOutOf();
             round++;
             levelComplete = true;
             gameStatus();
-        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 9) {
+        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 10) {
             e.setAttribute("style", "background-color: red");
-            roundQuestionNumber++;
             setTimeout(function() {displayQuestions(objectQuestions); }, 500);
             updateScoreAndOutOf();
-        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber == 9) {
+        } else if (selectedItem !== answerSelected.answer && roundQuestionNumber == 10) {
             e.setAttribute("style", "background-color: red");
-            roundQuestionNumber++;
             updateScoreAndOutOf();
             round++;
             levelComplete = true;
