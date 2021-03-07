@@ -27,7 +27,7 @@ const roundOneQuestions = [
         answer: "British"
     },
     {
-        question: "What is St. Patrick's real name",
+        question: "What is St. Patrick's real name?",
         options: ["Conor", "Maewyn", "Finn"],
         answer: "Maewyn"
     },
@@ -60,7 +60,7 @@ const roundTwoQuestions = [
         answer: "False"
     },
     {
-        question: "Beer is the most drank beverage on St. Patrick's day",
+        question: "Beer is the most drank beverage on St. Patrick's day.",
         options: ["True", "False"],
         answer: "True"
     },
@@ -75,32 +75,32 @@ const roundTwoQuestions = [
         answer: "True"
     },
     {
-        question: "Corned beef and cabbage is St. Patrick's classic dish",
+        question: "Corned beef and cabbage is St. Patrick's classic dish.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "St. Patrick got rid of all the cows on Ireland",
+        question: "St. Patrick got rid of all the cows on Ireland.",
         options: ["True", "False"],
         answer: "False"
     },
     {
-        question: "St. Patrick's day is also referred as St. Paddy's day",
+        question: "St. Patrick's day is also referred as St. Paddy's day.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "Maewyn is St. Patrick's real name",
+        question: "Maewyn is St. Patrick's real name.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "St. Patrick is not a patron saint of Ireland",
+        question: "St. Patrick is not a patron saint of Ireland.",
         options: ["True", "False"],
         answer: "False"
     },
     {
-        question: "Pubs have always been allowed to open on St. Patrick's day",
+        question: "Pubs have always been allowed to open on St. Patrick's day.",
         options: ["True", "False"],
         answer: "False"
     },
@@ -143,17 +143,17 @@ const roundThreeQuestions = [
         answer: "Dublin"
     },
     {
-        question: "Being drunk in public is an offence",
+        question: "Being drunk in public is an offence.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "More Irish live inside of Ireland than out",
+        question: "More Irish live inside of Ireland than out.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "Gay marriage is legal in Ireland",
+        question: "Gay marriage is legal in Ireland.",
         options: ["True", "False"],
         answer: "True"
     },
