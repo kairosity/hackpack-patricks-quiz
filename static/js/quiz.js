@@ -1,6 +1,6 @@
 let round = 1;
 let score = 0; //score will be used in display 0/10 and to track result
-let startTime = '1m : 00s'; //Used for display only, cn probably be replaced in HTML        CS -> The user has 1 minute to answer the question right? I think it's easier to make it 60seconds 
+let startTime = '60s'; //Used for display only, cn probably be replaced in HTML        CS -> The user has 1 minute to answer the question right? I think it's easier to make it 60seconds 
 let round1Score = 0; //store result from round
 let round2Score = 0; //store result from round
 let round3Score = 0; //store result from round
@@ -56,21 +56,23 @@ function clearBlock() {
 function startGame(questions) {
     levelComplete = false;
     timer(time);
-    displayQuestions(questions);
+    randomiseQuestions(questions);
 
     //Need to trigger first question load in here
 };
+
+function randomiseQuestions(arr) {
+    let objectQuestions = arr.sort(function () { return 0.5 - Math.random(); });
+    displayQuestions(objectQuestions);
+}
 
 //This function displays the questions and answers ********** Lot's to do!
 function displayQuestions(arr) {
     clearBlock();
 
     //This part of the function displays the question inside #questionBlock
-    let randomIndex = Math.floor(Math.random() * arr.length);
-
-    let objectQuestion = arr[randomIndex];
-
-    let currentQuestion = arr[randomIndex].question;
+    let currentObject = arr[roundQuestionNumber];
+    let currentQuestion = currentObject.question;
 
     let question = document.createElement("h1");
     question.setAttribute("id", "questionText");
@@ -81,20 +83,19 @@ function displayQuestions(arr) {
     let answerBlock = document.createElement("ul");
     questionBlock.append(answerBlock);
 
-    for (let i = 0; i < objectQuestion.options.length; i++) {
+    for (let j = 0; j < currentObject.options.length; j++) {
         let answerOptions = document.createElement("li");
         answerOptions.setAttribute("class", "answersList");
-        answerOptions.setAttribute("choice-value", objectQuestion.options[i]);
-        answerOptions.setAttribute("id", "questionNum-" + i);
-        answerOptions.textContent = objectQuestion.options[i];
+        answerOptions.setAttribute("choice-value", currentObject.options[j]);
+        answerOptions.setAttribute("id", "questionNum-" + j);
+        answerOptions.textContent = currentObject.options[j];
         answerBlock.append(answerOptions);
     }
 
     answerBlock.addEventListener("click", function () {
-        scoreAnswer(objectQuestion);
+        scoreAnswer(currentObject);
     });
 }
-
 
 //This function shows if the selected answer is correct or not and acts accordingly. 
 function scoreAnswer(answerSelected) {
@@ -183,10 +184,9 @@ function timer(time) { //time value taken from game setting difficulty
     gameTime = setInterval(function () { //uses interval to refresh display
         let now = new Date().getTime(); //sets current time
         timeDiff = time - now; //calcs time difference in correct format
-        let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)); //works out minutes
         let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000); //works out seconds
-        timeRemaining = (minutes * 60) + seconds;
-        $("#timer").html(minutes + "m : " + seconds + "s "); //updates timer display html
+        timeRemaining = seconds;
+        $("#timer").html(seconds + "s "); //updates timer display html
         if (levelComplete) {
             $("#timer").html("Finished");
             clearInterval(gameTime);
