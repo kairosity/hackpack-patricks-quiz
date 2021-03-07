@@ -45,7 +45,7 @@ Celebration vector created by freepik - www.freepik.com */
     font-family: 'Berkshire Swash', cursive;
 }
 .leaderboard-btn{
-    margin-bottom: 65px !important;
+    margin-bottom: 95px !important;
 }
 /* ---------------------------------- H1 */
 
@@ -143,7 +143,9 @@ label {
     font-size: 24px;
     text-align: left;
 }
-
+.main-page-headline{
+    margin-top: 5rem;
+}
 
 /* -------------------------------- Navigation menu */
 .navbar-dark .navbar-nav .nav-link {
@@ -259,7 +261,10 @@ footer {
     background-color: #f2ae2e;
     position: fixed;
     bottom: 0;
-    height: 60px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .social-links, .social-links ul, .copyright {
     padding: 0;
@@ -271,7 +276,6 @@ footer {
     font-family: 'Berkshire Swash', cursive;
     font-size: 20px;
     line-height: 33px;
-    vertical-align: center;
 }
 .social-links a {
     margin: 0 6px;

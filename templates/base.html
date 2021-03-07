@@ -21,7 +21,7 @@
     {% endblock %}
     <link rel="shortcut icon" type="image/jpg" href="{{url_for('static', filename='/assets/images/logo/logo.png')}}" />
     {% block title %}
-    <title>Patrick's Day Quiz</title>
+    <title>St. Patrick's Day Quiz</title>
     {% endblock %}
 
 </head>
@@ -36,7 +36,7 @@
                 <a href="{{url_for('home')}}" class="brand-logo logo navbar-brand">
                     <img src="{{url_for('static', filename='/assets/images/logo/logo.png')}}" height="90" width="90">
                 </a>
-                <span class="title">Patrick's Quiz</span>
+                <span class="title">St. Patrick's Quiz Game</span>
             </div>
             <!-- Navigation menu -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
@@ -46,25 +46,25 @@
             <div id="navbarToggle" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active-page" href="{{url_for('home')}}">Home /</a>
+                        <a class="nav-link active-page" href="{{url_for('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Get to Know Paddy /</a>
+                        <a class="nav-link" href="#">All about St.Patrick</a>
                     </li>
 
                     {% if session['user'] %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('create_battle')}}">Create a Quiz Battle /</a>
+                        <a class="nav-link" href="{{url_for('create_battle')}}">Create a Quiz Battle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('join_battle')}}">Join a Quiz Battle /</a>
+                        <a class="nav-link" href="{{url_for('join_battle')}}">Join a Quiz Battle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('logout')}}">Logout /</a>
+                        <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('login')}}">Login /</a>
+                        <a class="nav-link" href="{{url_for('login')}}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('register')}}">Register</a>
@@ -92,36 +92,34 @@
         </div>
 
 
-
-
     </section>
     {% block content %}
     {% endblock %}
-    <footer class="container-fluid align-items-center">
-        <div class="row align-items-center">
-            <div class="col-6 copyright align-items-center">For educational use.</div>
-            <div class="col-6 social-links">
+    <footer class="container-fluid ">
+        <div class="row ">
+            <div class="col-12 copyright">For educational use.</div>
+            <div class="col-12 social-links">
                 <ul class="list-inline">
                     <li class="list-inline-item">
-                        <a href="#" rel="noopener" target="_blank">
+                        <a href="https://www.pinterest.com/" rel="noopener" target="_blank">
                             <i class="fab fa-pinterest-square"></i>
                             <span class="sr-only">Pinterest.com</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#" rel="noopener" target="_blank">
+                        <a href="https://www.youtube.com/" rel="noopener" target="_blank">
                             <i class="fab fa-youtube-square"></i>
                             <span class="sr-only">Youtube.com</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#" rel="noopener" target="_blank">
+                        <a href="https://www.instagram.com/" rel="noopener" target="_blank">
                             <i class="fab fa-instagram-square"></i>
                             <span class="sr-only">Instagram.com</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#" rel="noopener" target="_blank">
+                        <a href="https://www.facebook.com/" rel="noopener" target="_blank">
                             <i class="fab fa-facebook-square"></i>
                             <span class="sr-only">Facebook.com</span>
                         </a>
