@@ -97,6 +97,10 @@ label {
     color: white;
 }
 
+div a.a-btn{
+    width: 80%
+}
+
 /* Responsive content */
 
 @media(max-width: 1260px) {
@@ -243,6 +247,15 @@ h4.flashmsg {
 }
 .btn-index {
     margin: 15px;
+}
+
+.info-page-link{
+    color: #f2ae2e;
+}
+.info-page-link:hover,
+.active{
+    border-bottom: #f2f2f2 2px solid;
+    color: #f2ae2e;
 }
 
 /* Responsive home-content */

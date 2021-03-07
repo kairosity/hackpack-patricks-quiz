@@ -10,24 +10,24 @@
 
 <section class="container-fluid home-section">
     <div class="row home-text">
-        <div class="col-8 align-self-center">
-            <h1 class="main-page-headline">Welcome to Patrick's Quiz!</h1>
+        <div class="col-12 col-md-8 align-self-center">
+            <h1 class="main-page-headline">Welcome to St. Patrick's Quiz Game!</h1>
             <p>
                 What better way to celebrate Paddy's Day in times of Covid than with a virtual Pub Quiz! 
                 Join a league and challenge your peers to answer riveting questions about Ireland & St.Patrick's Day!<br>
                 To get started having ALL THIS FUN, use the links below to register a FREE account and then create a quiz league.<br>
-                If you want guaranteed success navigate over to our Paddy's Day cheat-sheet on the <a href="#">Get to know Paddy's page</a>.<br>
+                If you want guaranteed success navigate over to our Paddy's Day cheat-sheet on the <a class="info-page-link" href="{{url_for('info')}}">Get to know Paddy's page</a>.<br>
                 So what are you waiting for? Get quizzing!
             </p>
         </div>
     </div>
     {% if session["user"] %}
     <div class="row button-section">
-        <div class="col-12 col-md-6 d-flex justify-content-center">
-                <a href="{{url_for('create_battle')}}" type="button" class="button-style">Create a Battle!</a>
+        <div class="col-12 col-md-4 offset-md-2 d-flex justify-content-center">
+                <a href="{{url_for('create_battle')}}" type="button" class="button-style a-btn">Create a Battle!</a>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center">
-                <a href="{{url_for('join_battle')}}" type="button" class="button-style">Join a Battle</a>
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+                <a href="{{url_for('join_battle')}}" type="button" class="button-style a-btn">Join a Battle</a>
         </div>
     </div>
 
