@@ -156,6 +156,7 @@ function gameStatus() {
         $("#out-of").html(0); //updates out-of display html
     } else if (round == 3) {
         round2Score = score;
+        console.log(round2Score);
         $('#roundThreeModal').modal('show'); //Triggers roundTwoModal
         $("#round2Score").html(round2Score);
         $("#score").html(0); //updates score display html
@@ -166,6 +167,7 @@ function gameStatus() {
         totalScore = (round1Score + round2Score + round3Score);
         console.log(totalScore);
         $("#total-score").html(totalScore);
+        $("#score-to-pass").html(totalScore);
         $("#score").html(0); //updates score display html
         $("#out-of").html(0); //updates out-of display html
     }
