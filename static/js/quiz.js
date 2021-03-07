@@ -1,6 +1,6 @@
 let round = 1;
 let score = 0; //score will be used in display 0/10 and to track result
-let startTime = '60s'; //Used for display only, cn probably be replaced in HTML        CS -> The user has 1 minute to answer the question right? I think it's easier to make it 60seconds 
+let startTime = ' 60s'; //Used for display only, cn probably be replaced in HTML        CS -> The user has 1 minute to answer the question right? I think it's easier to make it 60seconds 
 let round1Score = 0; //store result from round
 let round2Score = 0; //store result from round
 let round3Score = 0; //store result from round
@@ -8,6 +8,7 @@ let time = 60000; //estimated starting time of 60s for 10 questions. may be too 
 let totalScore = 0;
 let roundQuestionNumber = 0;
 let levelComplete = false;
+let objectQuestions;
 
 let questionBlock = document.querySelector("#question")  //CS --> On line 70 you are telling the pc to append "question" to questionBlock but you didn't define it so here it is.
 
@@ -16,32 +17,19 @@ $(window).on('load', function () {
     $("#timer").html(startTime); //sets start time display before timer() function is called
 });
 
-//This function selects the question object to access depending on the level
-//Stolen from Claudio's MS2
-function questionSelector(round) {
-    if (round === 1) {
-        levelQuestion = roundOneQuestions;
-    } else if (round === 2) {
-        levelQuestion = roundTwoQuestions;
-    } else if (round === 3) {
-        levelQuestion = roundThreeQuestions;
-    }
-};
-
 document.getElementById("startGame").onclick = function () {
-    questionSelector(round)
-    startGame(levelQuestion);
+    startGame(roundOneQuestions);
 };
 document.getElementById("roundTwoStart").onclick = function () {
-    questionSelector(round)
-    startGame(levelQuestion);
+    updateScoreAndOutOf();
+    startGame(roundTwoQuestions);
 };
 document.getElementById("roundThreeStart").onclick = function () {
-    questionSelector(round)
-    startGame(levelQuestion);
+    updateScoreAndOutOf();
+    startGame(roundThreeQuestions);
 };
 document.getElementById("restartGame").onclick = function () {
-    questionSelector(round)
+    updateScoreAndOutOf();
     startGame(roundOneQuestions);
 };
 
@@ -62,7 +50,7 @@ function startGame(questions) {
 };
 
 function randomiseQuestions(arr) {
-    let objectQuestions = arr.sort(function () { return 0.5 - Math.random(); });
+    objectQuestions = arr.sort(function () { return 0.5 - Math.random(); });
     displayQuestions(objectQuestions);
 }
 
@@ -83,12 +71,12 @@ function displayQuestions(arr) {
     let answerBlock = document.createElement("ul");
     questionBlock.append(answerBlock);
 
-    for (let j = 0; j < currentObject.options.length; j++) {
+    for (let i = 0; i < currentObject.options.length; i++) {
         let answerOptions = document.createElement("li");
         answerOptions.setAttribute("class", "answersList");
-        answerOptions.setAttribute("choice-value", currentObject.options[j]);
-        answerOptions.setAttribute("id", "questionNum-" + j);
-        answerOptions.textContent = currentObject.options[j];
+        answerOptions.setAttribute("choice-value", currentObject.options[i]);
+        answerOptions.setAttribute("id", "questionNum-" + i);
+        answerOptions.textContent = currentObject.options[i];
         answerBlock.append(answerOptions);
     }
 
@@ -106,44 +94,30 @@ function scoreAnswer(answerSelected) {
 
         if (selectedItem === answerSelected.answer && roundQuestionNumber < 9) {
             e.setAttribute("style", "background-color: green");
-            setTimeout(function () {
-                displayQuestions(levelQuestion);
-            }, 500);
             roundQuestionNumber++;
             score++;
-            $("#score").html(score); //updates score display html
-            $("#out-of").html(roundQuestionNumber); //updates out-of display html
+            setTimeout(function() {displayQuestions(objectQuestions); }, 500);
+            updateScoreAndOutOf();
         } else if (selectedItem === answerSelected.answer && roundQuestionNumber == 9) {
             e.setAttribute("style", "background-color: green");
-            setTimeout(function () {
-            }, 500);
+            roundQuestionNumber++;
             score++;
-            $("#score").html(score); //updates score display html
-            $("#out-of").html(roundQuestionNumber); //updates out-of display html
+            updateScoreAndOutOf();
             round++;
             levelComplete = true;
             gameStatus();
-            roundQuestionNumber = 0;
-            score = 0;
         } else if (selectedItem !== answerSelected.answer && roundQuestionNumber < 9) {
             e.setAttribute("style", "background-color: red");
-            setTimeout(function () {
-                displayQuestions(levelQuestion);
-            }, 500);
             roundQuestionNumber++;
-            $("#score").html(score); //updates score display html
-            $("#out-of").html(roundQuestionNumber); //updates out-of display html
+            setTimeout(function() {displayQuestions(objectQuestions); }, 500);
+            updateScoreAndOutOf();
         } else if (selectedItem !== answerSelected.answer && roundQuestionNumber == 9) {
             e.setAttribute("style", "background-color: red");
-            setTimeout(function () {
-            }, 500);
-            $("#score").html(score); //updates score display html
-            $("#out-of").html(roundQuestionNumber); //updates out-of display html
+            roundQuestionNumber++;
+            updateScoreAndOutOf();
             round++;
             levelComplete = true;
             gameStatus();
-            roundQuestionNumber = 0;
-            score = 0;
         }
     }
 }
@@ -152,28 +126,31 @@ function gameStatus() {
     if (round == 2) {
         round1Score = score;
         $('#roundTwoModal').modal('show'); //Triggers roundTwoModal
-        $("#round1Score").html(round1Score);
-        $("#score").html(0); //updates score display html
-        $("#out-of").html(0); //updates out-of display html
+        $("#round1Score").html(" " + round1Score + " / 10");
+        resetRoundAndScore();
     } else if (round == 3) {
         round2Score = score;
-        console.log(round2Score);
         $('#roundThreeModal').modal('show'); //Triggers roundTwoModal
-        $("#round2Score").html(round2Score);
-        $("#score").html(0); //updates score display html
-        $("#out-of").html(0); //updates out-of display html
+        $("#round2Score").html(" " + round2Score + " / 10");
+        resetRoundAndScore();
     } else {
         round3Score = score;
         $('#gameCompleteModal').modal('show'); //Triggers gameCompleteModal
         totalScore = (round1Score + round2Score + round3Score);
-        console.log(totalScore);
-        $("#total-score").html(totalScore);
+        $("#total-score").html(" " + totalScore + " / 30");
         $("#score-to-pass").html(totalScore);
         $("#score-to-pass").val(totalScore);
-        console.log($("#score-to-pass").val)
-        $("#score").html(0); //updates score display html
-        $("#out-of").html(0); //updates out-of display html
+        resetRoundAndScore();
     }
+}
+
+function updateScoreAndOutOf() {
+    $("#score").html(" " + score + " / " + roundQuestionNumber); //updates score display html
+}
+
+function resetRoundAndScore() {
+    roundQuestionNumber = 0;
+    score = 0;
 }
 
 /*
@@ -188,7 +165,7 @@ function timer(time) { //time value taken from game setting difficulty
         timeDiff = time - now; //calcs time difference in correct format
         let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000); //works out seconds
         timeRemaining = seconds;
-        $("#timer").html(seconds + "s "); //updates timer display html
+        $("#timer").html(" " + seconds + "s "); //updates timer display html
         if (levelComplete) {
             $("#timer").html("Finished");
             clearInterval(gameTime);
@@ -206,4 +183,6 @@ out of time triggers gameLostModal
 */
 function outOfTime() {
     $('#gameLostModal').modal('toggle');
+    resetRoundAndScore();
+    updateScoreAndOutOf();
 }
