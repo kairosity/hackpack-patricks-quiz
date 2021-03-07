@@ -270,6 +270,11 @@ def leaderboard(battle_pin):
     return render_template('leaderboard.html', battle=battle)
 
 
+@app.route("/know_paddy")
+def know_paddy():
+    return render_template("info.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
