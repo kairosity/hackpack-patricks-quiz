@@ -24,7 +24,7 @@ Celebration vector created by freepik - www.freepik.com */
 .home-section,
 .background-style {
     min-height: 100vh;
-    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center no-repeat;
+    background: #f2f2f2 url("../assets/images/background-images/home-background.jpg") center repeat;
     background-size: cover;
     position: relative;
 }
@@ -38,6 +38,14 @@ Celebration vector created by freepik - www.freepik.com */
     height: 100%;
     width: 100%;
     background-color: #1b1b1bcc;
+}
+
+.leaderboard-instructions{
+    color: white;
+    font-family: 'Berkshire Swash', cursive;
+}
+.leaderboard-btn{
+    margin-bottom: 95px !important;
 }
 /* ---------------------------------- H1 */
 
@@ -89,6 +97,10 @@ label {
     color: white;
 }
 
+div a.a-btn{
+    width: 80%
+}
+
 /* Responsive content */
 
 @media(max-width: 1260px) {
@@ -135,7 +147,9 @@ label {
     font-size: 24px;
     text-align: left;
 }
-
+.main-page-headline{
+    margin-top: 5rem;
+}
 
 /* -------------------------------- Navigation menu */
 .navbar-dark .navbar-nav .nav-link {
@@ -209,6 +223,7 @@ h4.flashmsg {
 .home-text {
     text-align: center;
     margin: 0 20px 20px;
+    justify-content: center;
 }
 .home-text p {
     font-family: 'Libre Baskerville', serif;
@@ -234,10 +249,20 @@ h4.flashmsg {
     margin: 15px;
 }
 
+.info-page-link{
+    color: #f2ae2e;
+}
+.info-page-link:hover,
+.active{
+    border-bottom: #f2f2f2 2px solid;
+    color: #f2ae2e;
+}
+
 /* Responsive home-content */
 @media(max-width: 768px) {
     .home-text {
         margin: 0;
+        justify-content: center;
     }
     .home-text p {
         font-size: 14px;
@@ -246,10 +271,13 @@ h4.flashmsg {
 }
 /*---------------------------------------------------------------------- Footer */
 footer {
-    background-color: #1b1b1b;
+    background-color: #f2ae2e;
     position: fixed;
     bottom: 0;
-    height: 33px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .social-links, .social-links ul, .copyright {
     padding: 0;
@@ -261,7 +289,6 @@ footer {
     font-family: 'Berkshire Swash', cursive;
     font-size: 20px;
     line-height: 33px;
-    vertical-align: center;
 }
 .social-links a {
     margin: 0 6px;
@@ -359,7 +386,6 @@ footer {
     margin-left: 10px;
 }
 
-
 .answersList {
     background: gold;
     font-family: 'Berkshire Swash', cursive;
@@ -408,6 +434,7 @@ footer {
 .hidden-score-input{
     display: none;
 }
+<<<<<<< HEAD
 /*---------------------------------------------------------------- info pages*/
 
 .info-section{
@@ -457,3 +484,6 @@ footer {
     padding: 0 0 15px 15px;
 
 }
+=======
+
+>>>>>>> 6e7d52a90c6c35fcd04e084ee7c277c9744abf98
