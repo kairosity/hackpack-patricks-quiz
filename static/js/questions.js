@@ -3,16 +3,16 @@
 const roundOneQuestions = [
     {
         question: "Who is St. Patrick?",
-        options: ["The Irish Prime-Minister", "The most famous Irish patron saint", "The most famous priest in Ireland"],
-        answer: "The most famous Irish patron saint"
+        options: ["The Irish Prime Minister", "Ireland's most famous patron saint", "Ireland's most famous priest"],
+        answer: "Ireland's most famous patron saint"
     },
     {
-        question: "What did St. Patrick got Ireland rid of?",
+        question: "According to legend what animal did St.Patrick rid Ireland of?",
         options: ["Cows", "Dogs", "Snakes"],
         answer: "Snakes"
     },
     {
-        question: "What is celebrated on March 17?",
+        question: "What is celebrated on March 17th?",
         options: ["St. Patrick's Day", "Easter", "Christmas"],
         answer: "St. Patrick's Day"
     },
@@ -32,17 +32,17 @@ const roundOneQuestions = [
         answer: "Maewyn"
     },
     {
-        question: "What is the color used on St. Patrick's day?",
+        question: "What color is used to represent's St. Patrick's day?",
         options: ["Green", "Blue", "Orange"],
         answer: "Green"
     },
     {
         question: "To which religion were the Irish converted by St. Patrick?",
-        options: ["Islamism", "Christianism", "Paganism"],
-        answer: "Christianism"
+        options: ["Islam", "Christianity", "Paganism"],
+        answer: "Christianity"
     },
     {
-        question: "What is a St. Patrick's classic dish?",
+        question: "What is St. Patrick's classic dish?",
         options: ["Corned beef and Cabbage", "Irish Seafood Chowder", "Colcannon"],
         answer: "Corned beef and Cabbage"
     },
@@ -60,7 +60,7 @@ const roundTwoQuestions = [
         answer: "False"
     },
     {
-        question: "Beer is the most drank beverage on St. Patrick's day.",
+        question: "Guinness is traditionally associated with St. Patrick's day.",
         options: ["True", "False"],
         answer: "True"
     },
@@ -80,7 +80,7 @@ const roundTwoQuestions = [
         answer: "True"
     },
     {
-        question: "St. Patrick got rid of all the cows on Ireland.",
+        question: "St. Patrick got rid of all the cows in Ireland.",
         options: ["True", "False"],
         answer: "False"
     },
@@ -95,7 +95,7 @@ const roundTwoQuestions = [
         answer: "True"
     },
     {
-        question: "St. Patrick is not a patron saint of Ireland.",
+        question: "St. Patrick is not the patron saint of Ireland.",
         options: ["True", "False"],
         answer: "False"
     },
@@ -108,7 +108,7 @@ const roundTwoQuestions = [
 
 const roundThreeQuestions = [
     {
-        question: "What is the biggest lake of Ireland?",
+        question: "What is Ireland's biggest lake?",
         options: ["Lough Derg", "Lough Neagh", "Lough Corrib"],
         answer: "Lough Neagh"
     },
@@ -123,7 +123,7 @@ const roundThreeQuestions = [
         answer: "Limerick"
     },
     {
-        question: "What is the longest river on Ireland?",
+        question: "What is Ireland's longest river?",
         options: ["River Shannon", "Grand Canal", "River Barrow"],
         answer: "River Shannon"
     },
@@ -138,17 +138,17 @@ const roundThreeQuestions = [
         answer: "Latin"
     },
     {
-        question: "What is Ireland's capital?",
+        question: "What is the capital of Ireland?",
         options: ["Lucan", "Dublin", "Cork"],
         answer: "Dublin"
     },
     {
-        question: "Being drunk in public is an offence.",
+        question: "Being drunk in public in Ireland is an offence.",
         options: ["True", "False"],
         answer: "True"
     },
     {
-        question: "More Irish live inside of Ireland than out.",
+        question: "There are more Irish living in Ireland than in other countries.",
         options: ["True", "False"],
         answer: "True"
     },
