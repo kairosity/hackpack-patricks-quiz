@@ -146,15 +146,11 @@ h4.flashmsg {
     margin: 0 auto;
     font-family: 'Berkshire Swash', cursive;
     font-size: 1.6rem;
-    
 }
 .flashes{
     background-color: green;
     justify-content: center;
 }
-
-
-
 
 /*---------------------------------------------------------------------- Home-Section */
 
@@ -285,17 +281,13 @@ footer {
     margin-top: 0;
     padding-top: 3rem;
 }
-
 .scores {
     color: white;
 }
-
-
 #hr_leaderboard {
     width: 50%;
     background-color: gold;
 }
-
 .scoreboard {
     font-family: 'Berkshire Swash', cursive;;
     background: rgb(248, 247, 177);
@@ -305,12 +297,10 @@ footer {
     box-shadow: 5px 5px 5px gold;
     text-align: center;
 }
-
 .leaderboard-title {
     border: 6px outset #8c512e;
     background: #c68f25;
 }
-
 .place {
     font-family: 'Berkshire Swash', cursive;
     margin: 40px 20px 40px 10px;
@@ -319,14 +309,12 @@ footer {
     color: white;
     text-align: center;
 }
-
 .score-text {
     margin: 10px;
     text-align: left;
     color: black;
     font-size: 2rem;
 }
-
 .scores {
     margin: auto;
     width: 75%;
@@ -408,11 +396,9 @@ footer {
     user-select: none;
     margin-bottom: 40px;
 }
-
 .answersList:hover {
     box-shadow: 0px 0px 20px gold;
 }
-
 #questionText {
     text-align: center;
     font-family: 'Berkshire Swash', cursive;
@@ -420,7 +406,6 @@ footer {
     margin-top: 20px;
 
 }
-
 .game-row {
     background:#e7b556;
     margin-right: 20%;
@@ -428,12 +413,10 @@ footer {
     border: 3px solid black;
     box-shadow: 0px 0px 20px gold;
 }
-
 .result {
     margin: 10px;
     font-size: 2rem;
 }
-
 .hidden-score-input{
     display: none;
 }
@@ -496,7 +479,6 @@ footer {
 .left-title {
     text-align: left;
 }
-
 .info_title_world {
     font-weight: bold;
     font-size: 1.5rem;
@@ -509,25 +491,20 @@ footer {
 .info-img{
     object-fit: cover;
 }
-
 .right-img{
     width: 40%;
     height: 10%;
     float: right;
     border-radius: 15%;
     padding-left:15px;
-
 }
-
 .left-img{
     width: 40%;
     height: 10%;
     float: left;
     border-radius: 15%;
     padding-right:15px;
-
 }
-
 /* Media Queries */
 
 @media(max-width: 1260px) {
@@ -588,10 +565,20 @@ footer {
     h1 {
         font-size: 30px;
     }
-
     .button-style {
         width: auto;
     }
+    /* Leaderboard for small screens */
+    .score-text{
+        font-size: 0.95rem;
+    }
+    .scores{
+        width: 95%;
+    }
+    .gold{
+        width: 100px;
+    }
+
 }
 
 @media(max-width: 425px) {

@@ -23,14 +23,11 @@
     {% block title %}
     <title>St. Patrick's Day Quiz</title>
     {% endblock %}
-
 </head>
-
 <body>
     <header class="container">
         <!-- Navigation bar -->
         <!-- Logo/Title -->
-
         <nav class="navbar navbar-dark navbar-gold bg-dark navbar-expand-md  fixed-top">
             <div class="logo-container">
                 <a href="{{url_for('home')}}" class="brand-logo logo navbar-brand">
@@ -76,7 +73,6 @@
     </header>
 
     <section>
-
         <div class="flashes row">
 
             <!-- Flash Messages displayed here -->
@@ -90,8 +86,6 @@
             {% endif %}
             {% endwith %}
         </div>
-
-
     </section>
     {% block content %}
     {% endblock %}
@@ -143,5 +137,4 @@
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
     <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
 </body>
-
 </html>
