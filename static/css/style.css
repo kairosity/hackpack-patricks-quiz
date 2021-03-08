@@ -528,7 +528,12 @@ footer {
 .hidden-score-input{
     display: none;
 }
+
 /*---------------------------------------------------------------- info pages*/
+
+/* Image Source: https://traveler.marriott.com/tips-and-trends/go-green-at-the-best-st-patricks-day-celebrations-and-thats-no-blarney/
+   https://www.hillwalktours.com/walking-hiking-blog/story-of-st-patrick/
+*/
 
 .info-section{
     min-height: 100vh;
@@ -564,10 +569,23 @@ footer {
 }
 
 .info_title {
+    text-align: left;
     font-weight: bold;
     font-size: 1.5rem;
     color: goldenrod;
     text-shadow: 1px 1px 1px white;
+}
+
+.right-title {
+    text-align: right;
+}
+
+.center_title {
+    text-align: center;
+}
+
+.left-title {
+    text-align: left;
 }
 
 .info_title_world {
@@ -590,12 +608,22 @@ footer {
     }
 }
 
-.patrick-img{
+.right-img{
     width: 40%;
     height: 10%;
     float: right;
     border-radius: 15%;
-    padding: 0 0 0 15px;
+    padding-left:15px;
 
 }
+
+.left-img{
+    width: 40%;
+    height: 10%;
+    float: left;
+    border-radius: 15%;
+    padding-right:15px;
+
+}
+
 
