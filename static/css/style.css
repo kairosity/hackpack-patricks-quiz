@@ -242,6 +242,13 @@ h4.flashmsg {
     box-shadow: 0px 5px 0px #46a637;
 }
 
+#league-index {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 33px;
+    color: white;
+    box-shadow: 0px 5px 0px #46a637;
+}
+
 .center {
     text-align: center;
 }

@@ -34,8 +34,8 @@
     
     <div class="row justify-content-center login-section">
         <form class="login-form col-10 col-md-6 col-lg-4" method="POST" action="{{ url_for('home') }}">
-            <h1 class="">League Leaderboards</h1>
-            <h4 class="leaderboard-instructions">Enter your league pin here to see how you stack up!</h4>
+            <h1 id="league-index">League Leaderboards</h1>
+            <h4 class="leaderboard-instructions center">Enter your league pin here to see how you stack up!</h4>
         <div class="mb-3">
             <input type="text" class="form-control"  name="battle_pin" aria-describedby="battle_pin">
         </div>
