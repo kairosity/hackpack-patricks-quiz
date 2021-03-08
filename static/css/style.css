@@ -349,14 +349,90 @@ footer {
 .leaderboard-scores{
     background-color: green;
     align-items: center;
+    width: 100%;
+    text-shadow: 2px 2px 2px gold;
+    position: absolute;
 }
 .leaderboard-heading{
     margin-top: 0;
     padding-top: 3rem;
 
 }
+
 .scores {
     color: white;
+}
+
+
+#hr_leaderboard {
+    width: 50%;
+    background-color: gold;
+}
+
+.scoreboard {
+    font-family: 'Berkshire Swash', cursive;;
+    background: rgb(248, 247, 177);
+    margin: 20px 20px 20px 0px;
+    border: 2px solid goldenrod;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px gold;
+    text-align: center;
+}
+
+.leaderboard-title {
+    border: 6px outset #8c512e;
+    background: #c68f25;
+}
+
+.place {
+    font-family: 'Berkshire Swash', cursive;
+    margin: 40px 20px 40px 10px;
+    font-size: 2rem;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+}
+
+.score-text {
+    margin: 10px;
+    text-align: left;
+    color: black;
+    font-size: 2rem;
+}
+
+.scores {
+    margin: auto;
+    width: 75%;
+    margin-bottom: 100px;
+    background: green;
+}
+
+.gold {
+    border: 3px solid rgb(177, 177, 177);
+    background: gold;
+    box-shadow: 10px 10px 10px gold;
+}
+
+.silver {
+    border: 3px solid rgb(177, 177, 177);
+    background: silver;
+    box-shadow: 10px 10px 10px silver;
+}
+
+.bronze {
+    border: 3px solid rgb(177, 177, 177);
+    background: #CD7F32;
+    box-shadow: 10px 10px 10px #CD7F32;
+}
+
+.right {
+    text-align: right;
+}
+
+#hr_scores {
+    margin: 50px auto 50px auto;
+    background-color: gold;
+    width: 75%;
 }
 
 /*----------------------------------------------------------------------Battleground */
@@ -434,7 +510,6 @@ footer {
 .hidden-score-input{
     display: none;
 }
-<<<<<<< HEAD
 /*---------------------------------------------------------------- info pages*/
 
 .info-section{
@@ -484,6 +559,4 @@ footer {
     padding: 0 0 15px 15px;
 
 }
-=======
 
->>>>>>> 6e7d52a90c6c35fcd04e084ee7c277c9744abf98
