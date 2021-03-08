@@ -148,7 +148,7 @@ h4.flashmsg {
     font-size: 1.6rem;
 }
 .flashes{
-    background-color: green;
+    background-color: #034f06;
     justify-content: center;
 }
 
@@ -270,7 +270,7 @@ footer {
     height: 100vh;
 }
 .leaderboard-scores{
-    background-color: green;
+    background-color: #034f06;
     align-items: center;
     width: 100%;
     text-shadow: 2px 2px 2px gold;
@@ -319,7 +319,7 @@ footer {
     margin: auto;
     width: 75%;
     margin-bottom: 100px;
-    background: green;
+    background: #034f06;
 }
 
 .gold {
