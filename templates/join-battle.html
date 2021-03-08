@@ -14,28 +14,28 @@
                 Your league creator will have sent you a pin number to enter here. Once you have it, enter it below and you will be brought directly to the quiz! 
                 When you've answered all the quiz questions, you can see how you stack up against others in your league! 
             </p>
-            <h4>Good Luck!</h4>
         </div>
     </div>
+
     <div class="container ">
         <div class="row justify-content-center button-section">
-            <form class="col s12" action="{{ url_for('join_battle') }}" method="POST">
+            <form class="login-form col-10 col-md-6 col-lg-4" action="{{ url_for('join_battle') }}" method="POST">
                 <div class="row center">
                     <div class="input-field col s12 center">
-                        <label for="battle_name" id="battle-label">League Pin Number</label>
+                        <label for="battle_name" id="battle-label">League Pin</label>
                     <div class="input-field col s12 center"></div>
-                        <input id="pin" name="pin" type="text" class="validate">
+                        <input id="pin" name="pin" type="text" class="form-control validate">
                     </div>
                 </div>
                 <div class="row center">
                     <div class="col s12 create-button"> 
-                        <!-- This must remain a button, or it will not pass variables -->
                         <button type="submit" class="button-style">Join League!</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+
 </section>
 
 

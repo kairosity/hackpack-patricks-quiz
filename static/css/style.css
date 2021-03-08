@@ -232,10 +232,20 @@ h4.flashmsg {
     line-height: 36px;
     letter-spacing: 2px;
 }
+
 #battle_name {
-    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 100%;
 }
+
+#pin {
+    margin-top: 40px;
+}
+
 #battle-label {
+    width: 100%;
     font-family: 'Berkshire Swash', cursive;
     font-size: 33px;
     color: white;
@@ -441,6 +451,7 @@ footer {
     background-color: gold;
     width: 75%;
 }
+
 
 /*----------------------------------------------------------------------Battleground */
 
