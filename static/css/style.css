@@ -589,9 +589,8 @@ footer {
     .gold{
         width: 100px;
     }
-   
     .info-row {
-        margin-top: 0px;
+        padding-top: 10px;
     }
     .modal-header h1 {
         font-size: 2rem;
