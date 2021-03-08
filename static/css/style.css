@@ -9,7 +9,7 @@ font-family: 'Pacifico', cursive;     ===>          */
 /* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
 body { 
     padding-top: 136px;
-    padding-bottom: 65px;
+    padding-bottom: 50px;
 }
 
 .container-fluid {
