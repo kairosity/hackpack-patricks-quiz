@@ -580,7 +580,6 @@ footer {
     .button-style {
         width: auto;
     }
-    /* Leaderboard for small screens */
     .score-text{
         font-size: 0.95rem;
     }
@@ -639,7 +638,7 @@ footer {
         font-size: 1.5rem;
     }
     .info-row {
-        margin-top: 10px;
+        margin-top: 0;
     }
 }
 
