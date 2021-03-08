@@ -369,6 +369,7 @@ footer {
     width: 100%;
     text-shadow: 2px 2px 2px gold;
     position: absolute;
+    height: 100vh;
 }
 .leaderboard-heading{
     margin-top: 0;
