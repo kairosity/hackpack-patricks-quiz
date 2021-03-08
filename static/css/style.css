@@ -101,39 +101,7 @@ div a.a-btn{
     width: 80%
 }
 
-/* Responsive content */
 
-@media(max-width: 1260px) {
-    .button-style {
-        font-size: 22px;
-    }
-}
-
-@media(max-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
-
-    .button-style {
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 768px) {
-    h1 {
-        font-size: 30px;
-    }
-
-    .button-style {
-        width: auto;
-    }
-}
-
-@media(max-width: 345px) {
-    .button-style {
-        padding: 6px;
-    }
-}
 /*---------------------------------------------------------------------- Header */
 
 /* Logo */
@@ -183,39 +151,8 @@ h4.flashmsg {
     background-color: green;
     justify-content: center;
 }
-/* Responsive header */
 
 
-@media(max-width: 1200px) {
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 14px;
-    }
-}
-
-@media(max-width: 992px) {
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 12px;
-    }
-
-     body { 
-        padding-top: 102px;
-    }
-    .navbar {
-        padding: 8px;
-    }
-    .logo {
-        margin: 3px 0 3px 3px;
-    }
-    .logo img {
-        height: 70px;
-        width: 70px;
-    }
-    .title {
-        font-size: 18px;
-    }
-}
-
-/* Responsive header */
 
 
 /*---------------------------------------------------------------------- Home-Section */
@@ -275,17 +212,7 @@ h4.flashmsg {
     color: #f2ae2e;
 }
 
-/* Responsive home-content */
-@media(max-width: 768px) {
-    .home-text {
-        margin: 0;
-        justify-content: center;
-    }
-    .home-text p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-}
+
 /*---------------------------------------------------------------------- Footer */
 footer {
     background-color: #f2ae2e;
@@ -313,15 +240,7 @@ footer {
 .social-links a:hover {
     color: #f2ae2e;
 }
-/* responsive footer */
-@media(max-width: 425px) {
-    .copyright,.social-links a {
-        font-size: 14px;
-    }
-    .social-links a {
-        margin: 0 3px;
-    }    
-}
+
 /*----------------------------------------------------------------------Register - Login */
 .register-section,
 .login-section {
@@ -347,16 +266,6 @@ footer {
     font-size: 22px;
 }
 
-@media(max-width: 375px) {
-    .register-section h1 {
-        font-size: 33px;
-    }
-    .register-section label {
-        font-size: 18px;
-    }
-}
-
-
 /* Leaderboard */
 
 .leaderboard-container{
@@ -374,7 +283,6 @@ footer {
 .leaderboard-heading{
     margin-top: 0;
     padding-top: 3rem;
-
 }
 
 .scores {
@@ -452,7 +360,6 @@ footer {
     background-color: gold;
     width: 75%;
 }
-
 
 /*----------------------------------------------------------------------Battleground */
 
@@ -599,15 +506,6 @@ footer {
     font-size: 2rem;
 }
 
-@media(max-width: 768px) {
-    .info-text {
-        margin: 0;
-    }
-    .info-text p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-}
 
 .right-img{
     width: 40%;
@@ -627,4 +525,89 @@ footer {
 
 }
 
+/* Media Queries */
 
+@media(max-width: 1260px) {
+    .button-style {
+        font-size: 22px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 992px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .button-style {
+        font-size: 14px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 12px;
+    }
+
+     body { 
+        padding-top: 102px;
+    }
+    .navbar {
+        padding: 8px;
+    }
+    .logo {
+        margin: 3px 0 3px 3px;
+    }
+    .logo img {
+        height: 70px;
+        width: 70px;
+    }
+    .title {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 768px) {
+    .info-text {
+        margin: 0;
+    }
+    .info-text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .home-text {
+        margin: 0;
+        justify-content: center;
+    }
+    .home-text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+
+    .button-style {
+        width: auto;
+    }
+}
+
+@media(max-width: 345px) {
+    .button-style {
+        padding: 6px;
+    }
+    .register-section h1 {
+        font-size: 33px;
+    }
+    .register-section label {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 425px) {
+    .copyright,.social-links a {
+        font-size: 14px;
+    }
+    .social-links a {
+        margin: 0 3px;
+    }    
+}
