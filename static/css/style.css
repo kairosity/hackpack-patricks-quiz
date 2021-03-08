@@ -359,14 +359,23 @@ footer {
     border: 6px outset #8c512e;
 }
 
+.modal-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+.modal-header h2 {
+    font-size: 1.5rem;
+}
+
 .info-row {
     color: white;
     font-family: 'Berkshire Swash', cursive;
 }
 
 .stats {
+    text-align: center;
+    margin: 0;
     font-size: 3rem;
-    margin: 10px;
 }
 
 .stats p {
@@ -578,7 +587,20 @@ footer {
     .gold{
         width: 100px;
     }
-
+    .info-row {
+        margin-top: 25px;
+    }
+    .modal-header h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    .modal-header h2 {
+        font-size: 1rem;
+    }    
+    .answersList {
+        font-size: 1.5rem;
+        width: 95%;
+    }
 }
 
 @media(max-width: 425px) {
@@ -587,7 +609,34 @@ footer {
     }
     .social-links a {
         margin: 0 3px;
+    }
+    .question ul {
+        margin: 0;
+        padding: 0;
     }    
+    .answersList {
+        font-size: 1rem;
+        width: 95%;
+    }
+    #questionText {
+        font-size: 1.5rem;
+    }
+    .stats p {
+        font-size: 2rem;
+    }
+    .modal-header h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    .modal-header h2 {
+        font-size: 1rem;
+    }
+    .modal-score {
+        font-size: 1.5rem;
+    }
+    .info-row {
+        margin-top: 10px;
+    }
 }
 
 @media(max-width: 345px) {
