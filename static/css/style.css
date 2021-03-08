@@ -284,6 +284,9 @@ footer {
 .scores {
     color: white;
 }
+ .scores-row{
+    background-color: #034f06;    
+}
 #hr_leaderboard {
     width: 50%;
     background-color: gold;
@@ -578,6 +581,7 @@ footer {
     .gold{
         width: 100px;
     }
+   
 
 }
 

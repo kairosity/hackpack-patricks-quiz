@@ -7,7 +7,8 @@
             <hr id="hr_leaderboard">
             <h1> League's Leaderboard</h1>
         </div>
-        <div class="col-12 offset-md-12 scores">
+        <div class="row scores-row">
+        <div class="col-8 offset-md-12 scores">
 
             {% for score in battle.battle_scores %}
             <div class="justify-content-center scoreboard">
@@ -27,6 +28,7 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
         </div>
 </div>
 {% endblock %}
