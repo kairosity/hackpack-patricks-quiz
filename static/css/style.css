@@ -9,6 +9,7 @@ font-family: 'Pacifico', cursive;     ===>          */
 /* THIS KEEPS THE NAVBAR FROM OVERLAPPING THE PAGE CONTENT. */
 body { 
     padding-top: 136px;
+    padding-bottom: 65px;
 }
 
 .container-fluid {
@@ -505,7 +506,9 @@ footer {
     margin: 30px 0;
     font-size: 2rem;
 }
-
+.info-img{
+    object-fit: cover;
+}
 
 .right-img{
     width: 40%;
@@ -591,6 +594,15 @@ footer {
     }
 }
 
+@media(max-width: 425px) {
+    .copyright,.social-links a {
+        font-size: 14px;
+    }
+    .social-links a {
+        margin: 0 3px;
+    }    
+}
+
 @media(max-width: 345px) {
     .button-style {
         padding: 6px;
@@ -603,11 +615,4 @@ footer {
     }
 }
 
-@media(max-width: 425px) {
-    .copyright,.social-links a {
-        font-size: 14px;
-    }
-    .social-links a {
-        margin: 0 3px;
-    }    
-}
+
